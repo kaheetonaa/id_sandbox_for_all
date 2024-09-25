@@ -36,11 +36,11 @@
 
 
       function checkScript() {
-        if (typeof iD === 'undefined' || !iD.utilDetect().support) {
-          container.innerHTML = 'Sorry, your browser is not currently supported. Please use another <a href="https://github.com/openstreetmap/iD#basics">browser</a> or <a href="https://wiki.openstreetmap.org/wiki/Editors">editor</a> to contribute to the map.';
-          container.style.padding = '20px';
+        //if (typeof iD === 'undefined' || !iD.utilDetect().support) {
+          //container.innerHTML = 'Sorry, your browser is not currently supported. Please use another <a href="https://github.com/openstreetmap/iD#basics">browser</a> or <a href="https://wiki.openstreetmap.org/wiki/Editors">editor</a> to contribute to the map.';
+          //container.style.padding = '20px';
 
-        } else {
+        //} else {
           var context = iD.coreContext()
             .assetPath('dist/')
             .containerNode(container);
@@ -52,7 +52,7 @@
           if (!q.hasOwnProperty('disable_features')) {
             context.features().disable('boundaries');
           }
-        }
+        //}
       }
     </script>
   </body>
