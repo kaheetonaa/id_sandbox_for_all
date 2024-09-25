@@ -20107,9 +20107,9 @@
   var nsiCdnUrl = "https://cdn.jsdelivr.net/npm/name-suggestion-index@{version}/";
   var defaultOsmApiConnections = {
     live: {
-      url: "https://www.openstreetmap.org",
-      apiUrl: "https://api.openstreetmap.org",
-      client_id: "0tmNTmd0Jo1dQp4AUmMBLtGiD9YpMuXzHefitcuVStc"
+      url: "https://www.api06.dev.openstreetmap.org",
+      apiUrl: "https://api06.dev.openstreetmap.org",
+      client_id: "k6Xvnl2vNfBhuzVbLcUz4P67s5qJRlDppb2uaHd370"
     },
     dev: {
       url: "https://api06.dev.openstreetmap.org",

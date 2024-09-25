@@ -6,7 +6,7 @@
 .ideditor div, .ideditor span, .ideditor applet, .ideditor object, .ideditor iframe, .ideditor h1, .ideditor h2, .ideditor h3, .ideditor h4, .ideditor h5, .ideditor h6, .ideditor p, .ideditor blockquote, .ideditor pre, .ideditor a, .ideditor abbr, .ideditor acronym, .ideditor address, .ideditor big, .ideditor cite, .ideditor code, .ideditor del, .ideditor dfn, .ideditor em, .ideditor img, .ideditor ins, .ideditor kbd, .ideditor q, .ideditor s, .ideditor samp, .ideditor small, .ideditor strike, .ideditor strong, .ideditor sub, .ideditor sup, .ideditor tt, .ideditor var, .ideditor b, .ideditor u, .ideditor i, .ideditor center, .ideditor dl, .ideditor dt, .ideditor dd, .ideditor ol, .ideditor ul, .ideditor li, .ideditor fieldset, .ideditor form, .ideditor label, .ideditor legend, .ideditor table, .ideditor caption, .ideditor tbody, .ideditor tfoot, .ideditor thead, .ideditor tr, .ideditor th, .ideditor td, .ideditor article, .ideditor aside, .ideditor canvas, .ideditor details, .ideditor embed, .ideditor figure, .ideditor figcaption, .ideditor footer, .ideditor header, .ideditor hgroup, .ideditor menu, .ideditor nav, .ideditor output, .ideditor ruby, .ideditor section, .ideditor summary, .ideditor time, .ideditor mark, .ideditor audio, .ideditor video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border: 10;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -3504,7 +3504,7 @@
 /* the root element of iD */
 .ideditor {
     height: 100%;
-    width: 100%;
+    width: 80%;
     margin: 0;
     padding: 0;
     border: 0;
