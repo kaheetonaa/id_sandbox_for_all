@@ -34,7 +34,7 @@
     }
 
     #map {
-      height: 180px;
+      aspect-ratio: 1 / 1;
     }
   </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -48,18 +48,36 @@
     <h1>Sandbox for OSM editting</h1>
     <div id="map"></div>
     <script>
+      var hash;
 
-      const queryString = window.location.search;
-      console.log(queryString);
+      var result;
 
-      const map = L.map('map').setView([51.505, -0.09], 13);
+      const map = L.map('map').setView([0, 0], 1);
 
       const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
 
-      map.setView(new L.LatLng(40.737, -73.923), 8);
+      
+      function getView() {
+        hash = window.location.hash.substr(1);
+        if (window.location.hash) {
+          result = hash.split('&').reduce(function (res, item) {
+            var parts = item.split('=');
+            res[parts[0]] = parts[1];
+            return res;
+          }, {});
+          coordinate=result['map'].split('/')
+          map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0])-1);
+
+          // Fragment exists
+        } else {
+          console.log('no!')
+          // Fragment doesn't exist
+        }
+      }
+      setInterval(getView, 2000);
 
     </script>
     <p>
