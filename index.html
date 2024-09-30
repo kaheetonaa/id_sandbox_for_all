@@ -45,9 +45,10 @@
 </head>
 <div id='sidepane'>
   <div style="padding: 5%">
-    <img src="https://euthmappers.com/app/uploads/2023/05/logo.png"/>
+    <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
     <h1>Sandbox for OSM editting</h1>
     <div id="map"></div>
+    <p>This site has both iD editor (big map drawing tool on the left) and mini map of actual OSM data on the right</p>
     <script>
       var hash;
 
@@ -60,7 +61,7 @@
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
 
-      
+
       function getView() {
         hash = window.location.hash.substr(1);
         if (window.location.hash) {
@@ -69,8 +70,8 @@
             res[parts[0]] = parts[1];
             return res;
           }, {});
-          coordinate=result['map'].split('/')
-          map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0])-1);
+          coordinate = result['map'].split('/')
+          map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0]) - 1);
 
           // Fragment exists
         } else {
@@ -81,39 +82,21 @@
       setInterval(getView, 2000);
 
     </script>
-    <p>
-      Lorem ipsum odor amet, consectetuer adipiscing elit. Eleifend mattis blandit fringilla urna interdum. Parturient
-      accumsan amet justo primis; viverra sodales arcu. Mauris erat quisque semper etiam ad metus cursus. Nascetur nam
-      volutpat consequat amet at dictum felis. Nascetur suscipit urna ad curae cursus. Dui justo pellentesque himenaeos
-      iaculis sociosqu venenatis. Conubia cubilia netus mi placerat nam. Parturient faucibus proin in semper; purus
-      molestie aptent tellus?
+    <h2>Open sandbox editting in iD editor</h2>
+    <li>Open the latest in-development version of iD (<a href="https://ideditor.netlify.app/">ideditor.netlify.app</a>)
+      (or you can test directly on this site)</li>
+    <li>Click the red " live " button in the status bar at the bottom.</li>
+    <li>When the text changed to dev, The sandbox is ready!</li>
 
-      Senectus tincidunt ante habitasse tristique pretium? Blandit porttitor varius facilisi non primis nulla duis
-      maximus. Asuscipit cras quis sociosqu velit accumsan pretium dis. Tellus luctus nunc nascetur ultrices curae porta
-      porttitor. Class posuere aliquam elementum dui egestas sit congue tempor. Risus ex imperdiet enim convallis leo
-      vehicula ac ante. Massa penatibus iaculis at maximus finibus. Etiam dis lacus hendrerit justo mollis parturient.
-      Aenean et interdum gravida tempus egestas parturient vivamus.
-
-      Per fames enim lorem litora mi aliquet suscipit vulputate risus. Sapien lectus massa sagittis netus blandit
-      phasellus lobortis. Metus suspendisse mus vivamus iaculis pharetra justo donec amet congue. Ultricies consectetur
-      class a dolor luctus; orci ac. Elit tempus gravida scelerisque natoque natoque duis condimentum iaculis pharetra.
-      Iaculis ullamcorper lectus; tristique porta magnis netus nisi pulvinar. Mus ac nullam duis montes aliquet
-      malesuada. Tempor donec nisi nunc pellentesque montes sapien.
-
-      Etiam sapien ligula condimentum ridiculus facilisis imperdiet nullam dictum. Felis congue turpis dis luctus quis
-      facilisis sed porta accumsan. Per condimentum porta viverra lacus congue convallis adipiscing. Torquent nulla
-      porta quis sit orci orci cras efficitur. Finibus in hendrerit dolor himenaeos consectetur sollicitudin parturient.
-      Dapibus ultrices ultricies dictumst vulputate massa imperdiet. Elementum eros libero tincidunt tellus magnis a.
-
-      Iaculis vivamus nisi mi sit dis. Lacinia varius phasellus cubilia, diam convallis cubilia. Dis proin eros quisque
-      ligula tempor etiam rhoncus. Fringilla purus tincidunt elit odio ligula diam. Aliquam class class conubia
-      adipiscing habitasse natoque. Orci nec dis vulputate bibendum justo lorem interdum turpis. Metus hac cubilia
-      suspendisse habitasse aliquam cursus. Purus praesent tellus interdum nullam dictum vulputate maximus.
-    </p>
-
-
-
+    <h2>Open sandbox editting in JOSM</h2>
+    <li>Go to the Edit menu and select Preferences > OSM server</li>
+    <li>Uncheck "Use the default OSM server".</li>
+    <li>Change OSM Server URL to https://api06.dev.openstreetmap.org/api and add your authentication by selecting Use
+    Oath 2.0 and click on Authorize now (fully automatic)</li>
+    <li>An (dev)Openstreetmap site appear, click on  Authorize , a site with the text ‘OK’ will appear.
+    Come back to Preferences window in JOSM, press OK</li>
   </div>
+</div>
 </div>
 
 <body>
