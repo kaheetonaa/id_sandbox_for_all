@@ -525,7 +525,7 @@ button.loading .icon {
     overflow-x: auto;
     overflow-y: hidden;
     height: 100%;
-    width: 100%;
+    width: 80%;
 
     /* hide scrollbar but allow scrolling */
     scrollbar-width: none; /* Firefox */
