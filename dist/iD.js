@@ -67806,7 +67806,6 @@
 
   // modules/ui/splash.js
   function uiSplash(context) {
-    var __team_selected2 = "";
     return (selection2) => {
       let updateMessage = "";
       const sawPrivacyVersion = corePreferences("sawPrivacyVersion");
@@ -67830,7 +67829,7 @@
       team_select.append("option").attr("value", "slovakia").html("Slovakia");
       team_select.append("option").attr("value", "spain").html("Spain");
       team_select.on("change", () => {
-        __team_selected2 = document.getElementById("team").value;
+        __team_selected = document.getElementById("team").value;
       });
       let modalSection = introModal.append("div").attr("class", "modal-section");
       modalSection.append("p").html(_t.html("splash.text", {
@@ -67855,7 +67854,7 @@
       let startEditing = buttonWrap.append("button").attr("class", "start-editing").on("click", () => {
         if (document.getElementById("team").value != "null") {
           modalSelection.close();
-          console.log(__team_selected2);
+          console.log(__team_selected);
         }
       });
       startEditing.append("svg").attr("class", "logo logo-features").append("use").attr("xlink:href", "#iD-logo-features");

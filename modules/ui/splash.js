@@ -8,7 +8,7 @@ import { uiSectionPrivacy } from './sections/privacy';
 
 
 export function uiSplash(context) {
-  var __team_selected=''
+
   return (selection) => {
     // Exception - if there are restorable changes, skip this splash screen.
     // This is because we currently only support one `uiModal` at a time
