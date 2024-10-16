@@ -38,9 +38,9 @@ export function coreContext() {
   // An osmChangeset object. Not loaded until needed.
   context.changeset = null;
 
-  let _defaultChangesetComment = context.initialHashParams.comment;
+  let _defaultChangesetComment = context.initialHashParams.comment; //context.initialHashParams.comment
   let _defaultChangesetSource = context.initialHashParams.source;
-  let _defaultChangesetHashtags = context.initialHashParams.hashtags;
+  let _defaultChangesetHashtags = 'EUthMappers'; //context.initialHashParams.comment
   context.defaultChangesetComment = function(val) {
     if (!arguments.length) return _defaultChangesetComment;
     _defaultChangesetComment = val;
