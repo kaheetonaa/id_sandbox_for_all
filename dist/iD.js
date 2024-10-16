@@ -21350,6 +21350,7 @@
     },
     dev: {
       url: "https://api06.dev.openstreetmap.org",
+      apiUrl: "https://api06.openstreetmap.org",
       client_id: "qk6Xvnl2vNfBhuzVbLcUz4P67s5qJRlDppb2uaHd370"
     }
   };
@@ -73878,7 +73879,7 @@
         initial = true;
         var presets = _mainPresetIndex;
         _fieldsArr = [
-          uiField(context, presets.field("comment"), "huy", { show: true, revert: false }),
+          uiField(context, presets.field("comment"), null, { show: true, revert: false }),
           //null
           uiField(context, presets.field("source"), null, { show: true, revert: false }),
           uiField(context, presets.field("hashtags"), null, { show: false, revert: false })

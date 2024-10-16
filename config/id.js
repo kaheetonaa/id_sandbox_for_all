@@ -19,6 +19,7 @@ const defaultOsmApiConnections = {
   },
   dev: {
     url: 'https://api06.dev.openstreetmap.org',
+    apiUrl: 'https://api06.openstreetmap.org',
     client_id: 'qk6Xvnl2vNfBhuzVbLcUz4P67s5qJRlDppb2uaHd370'
   }
 };

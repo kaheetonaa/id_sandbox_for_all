@@ -32,7 +32,7 @@ export function uiChangesetEditor(context) {
             var presets = presetManager;
 
             _fieldsArr = [
-                uiField(context, presets.field('comment'), 'huy', { show: true, revert: false }), //null
+                uiField(context, presets.field('comment'), null, { show: true, revert: false }), //null
                 uiField(context, presets.field('source'), null, { show: true, revert: false }),
                 uiField(context, presets.field('hashtags'), null, { show: false, revert: false }),
             ];
