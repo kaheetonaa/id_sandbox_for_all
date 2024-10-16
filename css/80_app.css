@@ -3,7 +3,7 @@
 /* the root element of iD */
 .ideditor {
     height: 100%;
-    width: 80%;
+    width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
@@ -525,7 +525,7 @@ button.loading .icon {
     overflow-x: auto;
     overflow-y: hidden;
     height: 100%;
-    width: 80%;
+    width: 100%;
 
     /* hide scrollbar but allow scrolling */
     scrollbar-width: none; /* Firefox */
@@ -4406,7 +4406,7 @@ img.tile-debug {
     bottom: 0;
     overflow: hidden;
     height: 100%;
-    width: 80%;
+    width: 100%;
     background: #000;
     user-select: none;
     touch-action: none;
@@ -4977,7 +4977,7 @@ img.tile-debug {
     overflow: hidden;
     margin: auto;
     z-index: 50;
-    width: 80%;
+    width: 100%;
     min-width: 200px;
     max-width: 550px;
     display: flex;

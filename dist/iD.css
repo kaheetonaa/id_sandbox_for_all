@@ -3507,7 +3507,7 @@
 /* the root element of iD */
 .ideditor {
     height: 100%;
-    width: 80%;
+    width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
@@ -4037,7 +4037,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     height: 100%;
-    width: 80%;
+    width: 100%;
 
     /* hide scrollbar but allow scrolling */
     scrollbar-width: none; /* Firefox */
@@ -7938,7 +7938,7 @@
     bottom: 0;
     overflow: hidden;
     height: 100%;
-    width: 80%;
+    width: 100%;
     background: #000;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -8515,7 +8515,7 @@
     overflow: hidden;
     margin: auto;
     z-index: 50;
-    width: 80%;
+    width: 100%;
     min-width: 200px;
     max-width: 550px;
     display: flex;
