@@ -40,7 +40,7 @@ export function coreContext() {
 
   let _defaultChangesetComment = context.initialHashParams.comment; //context.initialHashParams.comment
   let _defaultChangesetSource = context.initialHashParams.source;
-  let _defaultChangesetHashtags = 'EUthMappers'; //context.initialHashParams.comment
+  let _defaultChangesetHashtags = 'EUthMappers'+' '+document.getElementById("team").value; //context.initialHashParams.comment
   context.defaultChangesetComment = function(val) {
     if (!arguments.length) return _defaultChangesetComment;
     _defaultChangesetComment = val;

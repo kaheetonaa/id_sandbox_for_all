@@ -21350,7 +21350,6 @@
     },
     dev: {
       url: "https://api06.dev.openstreetmap.org",
-      apiUrl: "https://api06.openstreetmap.org",
       client_id: "qk6Xvnl2vNfBhuzVbLcUz4P67s5qJRlDppb2uaHd370"
     }
   };
@@ -67808,7 +67807,6 @@
   // modules/ui/splash.js
   function uiSplash(context) {
     return (selection2) => {
-      if (context.history().hasRestorableChanges()) return;
       let updateMessage = "";
       const sawPrivacyVersion = corePreferences("sawPrivacyVersion");
       let showSplash = !corePreferences("sawSplash");
@@ -74606,7 +74604,7 @@
     context.changeset = null;
     let _defaultChangesetComment = context.initialHashParams.comment;
     let _defaultChangesetSource = context.initialHashParams.source;
-    let _defaultChangesetHashtags = "EUthMappers";
+    let _defaultChangesetHashtags = "EUthMappers " + document.getElementById("team").value;
     context.defaultChangesetComment = function(val) {
       if (!arguments.length) return _defaultChangesetComment;
       _defaultChangesetComment = val;
