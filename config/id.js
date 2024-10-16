@@ -15,11 +15,11 @@ const defaultOsmApiConnections = {
   live: {
     url: 'https://www.openstreetmap.org',
     apiUrl: 'https://api.openstreetmap.org',
-    client_id: '0tmNTmd0Jo1dQp4AUmMBLtGiD9YpMuXzHefitcuVStc'
+    client_id: 'qMoWHp_3M7QjZqr5Sw1JieVSibGB5p71T_QU6fiRUok'
   },
   dev: {
     url: 'https://api06.dev.openstreetmap.org',
-    client_id: 'Ee1wWJ6UlpERbF6BfTNOpwn0R8k_06mvMXdDUkeHMgw'
+    client_id: 'qk6Xvnl2vNfBhuzVbLcUz4P67s5qJRlDppb2uaHd370'
   }
 };
 const osmApiConnections = [];

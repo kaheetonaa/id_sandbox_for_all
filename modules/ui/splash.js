@@ -22,7 +22,7 @@ export function uiSplash(context) {
       showSplash = true;
     }
 
-    if (!showSplash) return;
+    //if (!showSplash) return;
 
     prefs('sawSplash', true);
     prefs('sawPrivacyVersion', context.privacyVersion);
@@ -44,6 +44,38 @@ export function uiSplash(context) {
       .attr('class','modal-section')
       .append('h3')
       .call(t.append('splash.welcome'));
+
+    let team_select=introModal
+    .append('select')
+    .attr('name','team')
+    .attr('id','team')
+
+    team_select.append('option')
+    .attr('value','null')
+    .html('Please select a nation')
+
+    team_select.append('option')
+    .attr('value','italia')
+    .html('Italia')
+
+    team_select.append('option')
+    .attr('value','portugal')
+    .html('Portugal')
+
+    team_select.append('option')
+    .attr('value','spain')
+    .html('Romania')
+
+    team_select.append('option')
+    .attr('value','slovakia')
+    .html('Slovakia')
+
+    team_select.append('option')
+    .attr('value','spain')
+    .html('Spain')
+
+    team_select.on('change',()=>{console.log(document.getElementById("team").value)})
+
 
     let modalSection = introModal
       .append('div')
@@ -77,8 +109,10 @@ export function uiSplash(context) {
       .append('button')
       .attr('class', 'walkthrough')
       .on('click', () => {
+        if (document.getElementById("team").value!='null'){
         context.container().call(uiIntro(context));
         modalSelection.close();
+        }
       });
 
     walkthrough
@@ -94,7 +128,7 @@ export function uiSplash(context) {
     let startEditing = buttonWrap
       .append('button')
       .attr('class', 'start-editing')
-      .on('click', modalSelection.close);
+      .on('click', ()=>{if (document.getElementById("team").value!='null'){modalSelection.close()}});
 
     startEditing
       .append('svg')

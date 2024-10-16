@@ -1,144 +1,59 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset='utf-8'>
+    <title>iD</title>
+    <link rel='stylesheet' href='dist/iD.css'>
+    <link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgo='>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+    <meta name='mobile-web-app-capable' content='yes'/>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'/>
+    <style type='text/css'>
+      /* apply document-level styling to standalone iD only */
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        /* disable elastic page bounce upon scroll */
+        overflow: hidden;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset='utf-8'>
-  <title>iD</title>
-  <link rel='stylesheet' href='dist/iD.css'>
-  <link rel='icon' type='image/png' href='data:image/png;base64,iVBORw0KGgo='>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-  <meta name='viewport'
-    content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-  <meta name='apple-mobile-web-app-capable' content='yes' />
-  <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
-  <style type='text/css'>
-    /* apply document-level styling to standalone iD only */
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      /* disable elastic page bounce upon scroll */
-      overflow: hidden;
-    }
+  <body>
+    <div id='id-container'></div>
 
-    #sidepane {
-      width: 20%;
-      height: 100%;
-      background-color: rgb(255, 255, 255);
-      z-index: 10;
-      position: absolute;
-      right: 0;
-      top: 0;
-      overflow: scroll;
-      font-family: "Comfortaa", sans-serif;
-      line-height: 2rem;
-    }
-    h1,h2 {
-      color: #62CBEC;
-    }
-
-    #map {
-      aspect-ratio: 1 / 1;
-    }
-  </style>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-</head>
-<div id='sidepane'>
-  <div style="padding: 5%">
-    <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
-    <h1>Sandbox for OSM editting 🪣🧤</h1>
-    <div id="map"></div>
-    <p>This site has both iD editor (big map drawing tool on the left) and mini map of actual OSM data on the right</p>
     <script>
-      var hash;
+      var container = document.getElementById('id-container');
+      var newScript = document.createElement('script');
+      newScript.type = 'text/javascript';
+      newScript.onload = checkScript;
+      newScript.onerror = checkScript;
+      newScript.src = 'dist/iD.js';
 
-      var result;
-
-      const map = L.map('map').setView([0, 0], 1);
-
-      const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
+      document.getElementsByTagName('head')[0].appendChild(newScript);
 
 
-      function getView() {
-        hash = window.location.hash.substr(1);
-        if (window.location.hash) {
-          result = hash.split('&').reduce(function (res, item) {
-            var parts = item.split('=');
-            res[parts[0]] = parts[1];
-            return res;
-          }, {});
-          coordinate = result['map'].split('/')
-          map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0]) - 1);
+      function checkScript() {
+        if (typeof iD === 'undefined' || !iD.utilDetect().support) {
+          container.innerHTML = 'Sorry, your browser is not currently supported. Please use another <a href="https://github.com/openstreetmap/iD#basics">browser</a> or <a href="https://wiki.openstreetmap.org/wiki/Editors">editor</a> to contribute to the map.';
+          container.style.padding = '20px';
 
-          // Fragment exists
         } else {
-          console.log('no!')
-          // Fragment doesn't exist
+          var context = iD.coreContext()
+            .assetPath('dist/')
+            .containerNode(container);
+          window.context = window.id = context;  // for debugging
+          context.init();
+
+          // disable boundaries (unless we have an explicit disable_features list)
+          var q = iD.utilStringQs(window.location.hash);
+          if (!q.hasOwnProperty('disable_features')) {
+            context.features().disable('boundaries');
+          }
         }
       }
-      setInterval(getView, 2000);
-
     </script>
-    <h2>Open sandbox editting in iD editor</h2>
-    <li>Open the latest in-development version of iD (<a href="https://ideditor.netlify.app/">ideditor.netlify.app</a>)
-      (or you can test directly on this site)</li>
-    <li>Click the red " live " button in the status bar at the bottom.</li>
-    <li>When the text changed to dev, The sandbox is ready!</li>
-
-    <h2>Open sandbox editting in JOSM</h2>
-    <li>Go to the Edit menu and select Preferences > OSM server</li>
-    <li>Uncheck "Use the default OSM server".</li>
-    <li>Change OSM Server URL to https://api06.dev.openstreetmap.org/api and add your authentication by selecting Use
-      Oath 2.0 and click on Authorize now (fully automatic)</li>
-    <li>An (dev)Openstreetmap site appear, click on Authorize , a site with the text ‘OK’ will appear.
-      Come back to Preferences window in JOSM, press OK</li>
-  </div>
-</div>
-</div>
-
-<body>
-  <div id='id-container'></div>
-
-  <script>
-    var container = document.getElementById('id-container');
-    var newScript = document.createElement('script');
-    newScript.type = 'text/javascript';
-    newScript.onload = checkScript;
-    newScript.onerror = checkScript;
-    newScript.src = 'dist/iD.js';
-
-    document.getElementsByTagName('head')[0].appendChild(newScript);
-
-
-    function checkScript() {
-      //if (typeof iD === 'undefined' || !iD.utilDetect().support) {
-      //container.innerHTML = 'Sorry, your browser is not currently supported. Please use another <a href="https://github.com/openstreetmap/iD#basics">browser</a> or <a href="https://wiki.openstreetmap.org/wiki/Editors">editor</a> to contribute to the map.';
-      //container.style.padding = '20px';
-
-      //} else {
-      var context = iD.coreContext()
-        .assetPath('dist/')
-        .containerNode(container);
-      window.context = window.id = context;  // for debugging
-      context.init();
-
-      // disable boundaries (unless we have an explicit disable_features list)
-      var q = iD.utilStringQs(window.location.hash);
-      if (!q.hasOwnProperty('disable_features')) {
-        context.features().disable('boundaries');
-      }
-      //}
-    }
-  </script>
-</body>
-
+  </body>
 </html>

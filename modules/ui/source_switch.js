@@ -35,6 +35,7 @@ export function uiSourceSwitch(context) {
             .classed('chip', isLive);
 
         osm.switch(isLive ? keys[0] : keys[1]);  // switch connection (warning: dispatches 'change' event)
+        console.log('huy'+isLive)
     }
 
     var sourceSwitch = function(selection) {

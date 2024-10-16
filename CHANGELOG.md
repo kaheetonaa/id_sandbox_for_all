@@ -35,6 +35,43 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 [@xxxx]: https://github.com/xxxx
 -->
 
+# Unreleased (2.31.0-dev)
+
+#### :sparkles: Usability & Accessibility
+#### :scissors: Operations
+#### :camera: Street-Level
+#### :white_check_mark: Validation
+#### :bug: Bugfixes
+#### :earth_asia: Localization
+
+* Update Sinitic languages in the Multilingual Names field ([#10488], thanks [@winstonsung])
+* Update the list of languages in the Wikipedia field ([#10489])
+
+#### :hourglass: Performance
+#### :mortar_board: Walkthrough / Help
+#### :rocket: Presets
+#### :hammer: Development
+
+[#10488]: https://github.com/openstreetmap/iD/pull/10488
+[#10489]: https://github.com/openstreetmap/iD/pull/10489
+[@winstonsung]: https://github.com/winstonsung/
+
+# 2.30.4
+##### 2024-Oct-07
+
+* Refresh background imagery dataset ([#10486])
+
+[#10486]: https://github.com/openstreetmap/iD/issues/10486
+
+
+# 2.30.3
+##### 2024-Oct-02
+
+* Refresh background imagery dataset ([#10483])
+
+
+[#10483]: https://github.com/openstreetmap/iD/issues/10483
+
 
 # 2.30.2
 ##### 2024-Aug-21
@@ -85,6 +122,7 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 [#7582]: https://github.com/openstreetmap/iD/issues/7582
 [#8994]: https://github.com/openstreetmap/iD/issues/8994
 [#9993]: https://github.com/openstreetmap/iD/issues/9993
+[#9941]: https://github.com/openstreetmap/iD/issues/9941
 [#10181]: https://github.com/openstreetmap/iD/pull/10181
 [#10255]: https://github.com/openstreetmap/iD/pull/10255
 [#10257]: https://github.com/openstreetmap/iD/pull/10257
@@ -164,6 +202,7 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 * Allow to search for OSM notes by id in search bar ([#10062], thanks [@NaVis0mple])
 * Add support for coordinates in `<degree> <minutes>[ <seconds>]` format to search bar ([#10066], thanks [@NaVis0mple])
 * Improve styling of combobox dopdown list to give entries with long labels more room for better readability ([#10127], thanks [@tordans])
+* Add button(s) to open website URLs in fields for semicolon separated tags ([#9974], thanks [@lefuturiste])
 #### :camera: Street-Level
 * Fetch Microsoft Bing Streetlevel imagery layer via the Bing Maps API (from the previously used undocumented internal API endpoints), fixing reliability issues with the service's integration ([#10074])
 #### :white_check_mark: Validation
@@ -187,6 +226,7 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 [#9422]: https://github.com/openstreetmap/iD/issues/9422
 [#9876]: https://github.com/openstreetmap/iD/issues/9876
 [#9891]: https://github.com/openstreetmap/iD/pull/9891
+[#9974]: https://github.com/openstreetmap/iD/pull/9974
 [#9983]: https://github.com/openstreetmap/iD/issues/9983
 [#9992]: https://github.com/openstreetmap/iD/issues/9992
 [#10035]: https://github.com/openstreetmap/iD/pull/10035
@@ -201,6 +241,7 @@ _Breaking developer changes, which may affect downstream projects or sites that 
 [@mangerlahn]: https://github.com/mangerlahn
 [@NaVis0mple]: https://github.com/NaVis0mple
 [@mtmail]: https://github.com/mtmail
+[@lefuturiste]: https://github.com/lefuturiste
 
 
 # 2.27.3
