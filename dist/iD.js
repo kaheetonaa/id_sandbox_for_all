@@ -74076,7 +74076,7 @@
         corePreferences("commentDate", Date.now());
       }
       if (context.defaultChangesetHashtags()) {
-        corePreferences("hashtags", __team_selected);
+        corePreferences("hashtags", __team_selected + "#EuthMappers");
         corePreferences("commentDate", Date.now());
       }
       var detected = utilDetect();
