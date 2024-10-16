@@ -8,6 +8,7 @@ import { uiSectionPrivacy } from './sections/privacy';
 
 
 export function uiSplash(context) {
+  var __team_selected=''
   return (selection) => {
     // Exception - if there are restorable changes, skip this splash screen.
     // This is because we currently only support one `uiModal` at a time
@@ -130,7 +131,9 @@ export function uiSplash(context) {
     let startEditing = buttonWrap
       .append('button')
       .attr('class', 'start-editing')
-      .on('click', ()=>{if (document.getElementById("team").value!='null'){modalSelection.close()}});
+      .on('click', ()=>{if (document.getElementById("team").value!='null'){modalSelection.close();
+        console.log(__team_selected)
+      }});
 
     startEditing
       .append('svg')

@@ -9,7 +9,6 @@ import { uiField } from './field';
 import { uiFormFields } from './form_fields';
 import { utilArrayUniqBy, utilCleanOsmString, utilRebind, utilTriggerEvent, utilUnicodeCharsCount } from '../util';
 
-
 export function uiChangesetEditor(context) {
     var dispatch = d3_dispatch('change');
     var formFields = uiFormFields(context);
