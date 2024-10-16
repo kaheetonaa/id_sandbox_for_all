@@ -67829,7 +67829,7 @@
       team_select.append("option").attr("value", "slovakia").html("Slovakia");
       team_select.append("option").attr("value", "spain").html("Spain");
       team_select.on("change", () => {
-        __team_selected = document.getElementById("team").value;
+        __team_selected = document.getElementById("team").value + " #EuthMappers";
       });
       let modalSection = introModal.append("div").attr("class", "modal-section");
       modalSection.append("p").html(_t.html("splash.text", {
