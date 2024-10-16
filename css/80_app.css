@@ -3,7 +3,7 @@
 /* the root element of iD */
 .ideditor {
     height: 100%;
-    width: 80%;
+    width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
@@ -4406,7 +4406,7 @@ img.tile-debug {
     bottom: 0;
     overflow: hidden;
     height: 100%;
-    width: 100%;
+    width: 80%;
     background: #000;
     user-select: none;
     touch-action: none;
