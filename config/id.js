@@ -39,7 +39,7 @@ if (ENV__ID_API_CONNECTION_URL !== null &&
     osmApiConnections.push(defaultOsmApiConnections[ENV__ID_API_CONNECTION]);
 } else {
   // offer both "live" and "dev" servers by default
-  osmApiConnections.push(defaultOsmApiConnections.live);
+  //osmApiConnections.push(defaultOsmApiConnections.live);
   osmApiConnections.push(defaultOsmApiConnections.dev);
 }
 

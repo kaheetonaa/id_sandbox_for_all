@@ -21363,7 +21363,6 @@
   } else if (false) {
     osmApiConnections.push(defaultOsmApiConnections[null]);
   } else {
-    osmApiConnections.push(defaultOsmApiConnections.live);
     osmApiConnections.push(defaultOsmApiConnections.dev);
   }
   var taginfoApiUrl = "https://taginfo.openstreetmap.org/api/4/";
@@ -74076,7 +74075,7 @@
         corePreferences("commentDate", Date.now());
       }
       if (context.defaultChangesetHashtags()) {
-        corePreferences("hashtags", __team_selected + "#EuthMappers");
+        corePreferences("hashtags", __team_selected);
         corePreferences("commentDate", Date.now());
       }
       var detected = utilDetect();
