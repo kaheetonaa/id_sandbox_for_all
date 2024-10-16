@@ -67805,6 +67805,7 @@
   }
 
   // modules/ui/splash.js
+  var team_selected2 = "";
   function uiSplash(context) {
     return (selection2) => {
       let updateMessage = "";
@@ -67829,7 +67830,7 @@
       team_select.append("option").attr("value", "slovakia").html("Slovakia");
       team_select.append("option").attr("value", "spain").html("Spain");
       team_select.on("change", () => {
-        console.log(document.getElementById("team").value);
+        team_selected2 = document.getElementById("team").value;
       });
       let modalSection = introModal.append("div").attr("class", "modal-section");
       modalSection.append("p").html(_t.html("splash.text", {
@@ -74075,7 +74076,7 @@
         corePreferences("commentDate", Date.now());
       }
       if (context.defaultChangesetHashtags()) {
-        corePreferences("hashtags", context.defaultChangesetHashtags(document.getElementById("team").value));
+        corePreferences("hashtags", context.defaultChangesetHashtags(team_selected));
         corePreferences("commentDate", Date.now());
       }
       var detected = utilDetect();
@@ -74604,7 +74605,7 @@
     context.changeset = null;
     let _defaultChangesetComment = context.initialHashParams.comment;
     let _defaultChangesetSource = context.initialHashParams.source;
-    let _defaultChangesetHashtags = "EUthMappers";
+    let _defaultChangesetHashtags = "EUthMappers ";
     context.defaultChangesetComment = function(val) {
       if (!arguments.length) return _defaultChangesetComment;
       _defaultChangesetComment = val;

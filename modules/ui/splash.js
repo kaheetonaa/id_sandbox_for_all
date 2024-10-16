@@ -5,6 +5,7 @@ import { uiIntro } from './intro';
 import { uiModal } from './modal';
 import { uiSectionPrivacy } from './sections/privacy';
 
+var team_selected=''
 
 export function uiSplash(context) {
   return (selection) => {
@@ -74,7 +75,7 @@ export function uiSplash(context) {
     .attr('value','spain')
     .html('Spain')
 
-    team_select.on('change',()=>{console.log(document.getElementById("team").value);
+    team_select.on('change',()=>{team_selected=document.getElementById("team").value;
     })
 
 
