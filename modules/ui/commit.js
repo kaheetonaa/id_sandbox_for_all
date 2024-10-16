@@ -82,7 +82,7 @@ export function uiCommit(context) {
             prefs('commentDate', Date.now());
         }
         if (context.defaultChangesetHashtags()) {
-            prefs('hashtags', context.defaultChangesetHashtags(team_selected));
+            prefs('hashtags', context.defaultChangesetHashtags(__team_selected));
             prefs('commentDate', Date.now());
         }
 
