@@ -74,7 +74,8 @@ export function uiSplash(context) {
     .attr('value','spain')
     .html('Spain')
 
-    team_select.on('change',()=>{console.log(document.getElementById("team").value)})
+    team_select.on('change',()=>{console.log(document.getElementById("team").value);
+    })
 
 
     let modalSection = introModal
