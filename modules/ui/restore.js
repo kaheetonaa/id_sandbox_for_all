@@ -35,6 +35,7 @@ export function uiRestore(context) {
       .on('click', () => {
         context.history().restore();
         modalSelection.remove();
+        //modalSelection.close();
       });
 
     restore
@@ -53,6 +54,7 @@ export function uiRestore(context) {
       .on('click', () => {
         context.history().clearSaved();
         modalSelection.remove();
+        //modalSelection.close();
       });
 
     reset

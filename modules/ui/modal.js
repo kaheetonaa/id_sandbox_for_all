@@ -60,9 +60,9 @@ export function uiModal(selection, blocking) {
       .on('click', shaded.close)
       .call(svgIcon('#iD-icon-close'));
 
-    keybinding
-      .on('⌫', shaded.close)
-      .on('⎋', shaded.close);
+    //keybinding
+    //  .on('⌫', shaded.close)
+    //  .on('⎋', shaded.close);
 
     d3_select(document)
       .call(keybinding);

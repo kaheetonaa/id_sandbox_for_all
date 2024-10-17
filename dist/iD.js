@@ -41986,7 +41986,6 @@
         }
       });
       modal.append("button").attr("class", "close").attr("title", _t("icons.close")).on("click", shaded.close).call(svgIcon("#iD-icon-close"));
-      keybinding.on("\u232B", shaded.close).on("\u238B", shaded.close);
       select_default2(document).call(keybinding);
     }
     modal.append("div").attr("class", "content");
@@ -67791,6 +67790,7 @@
   // modules/ui/splash.js
   function uiSplash(context) {
     return (selection2) => {
+      if (context.history().hasRestorableChanges()) return;
       let updateMessage = "";
       const sawPrivacyVersion = corePreferences("sawPrivacyVersion");
       let showSplash = !corePreferences("sawSplash");
