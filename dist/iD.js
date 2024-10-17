@@ -67798,6 +67798,7 @@
         updateMessage = _t("splash.privacy_update");
         showSplash = true;
       }
+      console.log(typeof __team_selected);
       corePreferences("sawSplash", true);
       let modalSelection = uiModal(selection2);
       modalSelection.select(".modal").attr("class", "modal-splash modal");
@@ -67815,9 +67816,9 @@
       let buttonWrap = introModal.append("div").attr("class", "modal-actions");
       let walkthrough = buttonWrap.append("button").attr("class", "walkthrough").on("click", () => {
         if (document.getElementById("team").value != "null") {
+          __team_selected = document.getElementById("team").value + " #EuthMappers";
           context.container().call(uiIntro(context));
           modalSelection.close();
-          __team_selected = document.getElementById("team").value + " #EuthMappers";
           corePreferences("hashtags", __team_selected);
         }
       });
@@ -67825,9 +67826,8 @@
       walkthrough.append("div").call(_t.append("splash.walkthrough"));
       let startEditing = buttonWrap.append("button").attr("class", "start-editing").on("click", () => {
         if (document.getElementById("team").value != "null") {
-          modalSelection.close();
-          console.log(__team_selected);
           __team_selected = document.getElementById("team").value + " #EuthMappers";
+          modalSelection.close();
           corePreferences("hashtags", __team_selected);
         }
       });

@@ -23,7 +23,7 @@ export function uiSplash(context) {
       updateMessage = t('splash.privacy_update');
       showSplash = true;
     }
-
+    console.log(typeof __team_selected)
     //if (!showSplash) return;
 
     prefs('sawSplash', true);
@@ -74,6 +74,8 @@ export function uiSplash(context) {
     .html('Spain')
 
 
+
+
     let modalSection = introModal
       .append('div')
       .attr('class','modal-section');
@@ -107,9 +109,9 @@ export function uiSplash(context) {
       .attr('class', 'walkthrough')
       .on('click', () => {
         if (document.getElementById("team").value!='null'){
+          __team_selected=document.getElementById("team").value+" #EuthMappers";
         context.container().call(uiIntro(context));
         modalSelection.close();
-        __team_selected=document.getElementById("team").value+" #EuthMappers";
         prefs('hashtags', __team_selected);
         }
       });
@@ -127,9 +129,9 @@ export function uiSplash(context) {
     let startEditing = buttonWrap
       .append('button')
       .attr('class', 'start-editing')
-      .on('click', ()=>{if (document.getElementById("team").value!='null'){modalSelection.close();
-        console.log(__team_selected)
+      .on('click', ()=>{if (document.getElementById("team").value!='null'){
         __team_selected=document.getElementById("team").value+" #EuthMappers";
+        modalSelection.close();
         prefs('hashtags', __team_selected)
       }});
 
