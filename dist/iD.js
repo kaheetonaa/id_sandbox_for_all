@@ -67799,7 +67799,6 @@
         showSplash = true;
       }
       corePreferences("sawSplash", true);
-      corePreferences("hashtags", __team_selected);
       let modalSelection = uiModal(selection2);
       modalSelection.select(".modal").attr("class", "modal-splash modal");
       let introModal = modalSelection.select(".content").append("div").attr("class", "fillL");

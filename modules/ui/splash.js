@@ -26,7 +26,7 @@ export function uiSplash(context) {
 
     //if (!showSplash) return;
 
-    prefs('sawSplash', true);prefs('hashtags', __team_selected)
+    prefs('sawSplash', true);
 
     let modalSelection = uiModal(selection);
 
