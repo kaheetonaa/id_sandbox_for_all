@@ -67788,26 +67788,6 @@
     };
   }
 
-  // modules/ui/sections/privacy.js
-  function uiSectionPrivacy(context) {
-    let section = uiSection("preferences-third-party", context).label(() => _t.append("preferences.privacy.title")).disclosureContent(renderDisclosureContent);
-    function renderDisclosureContent(selection2) {
-      selection2.selectAll(".privacy-options-list").data([0]).enter().append("ul").attr("class", "layer-list privacy-options-list");
-      let thirdPartyIconsEnter = selection2.select(".privacy-options-list").selectAll(".privacy-third-party-icons-item").data([corePreferences("preferences.privacy.thirdpartyicons") || "true"]).enter().append("li").attr("class", "privacy-third-party-icons-item").append("label").call(
-        uiTooltip().title(() => _t.append("preferences.privacy.third_party_icons.tooltip")).placement("bottom")
-      );
-      thirdPartyIconsEnter.append("input").attr("type", "checkbox").on("change", (d3_event, d2) => {
-        d3_event.preventDefault();
-        corePreferences("preferences.privacy.thirdpartyicons", d2 === "true" ? "false" : "true");
-      });
-      thirdPartyIconsEnter.append("span").call(_t.append("preferences.privacy.third_party_icons.description"));
-      selection2.selectAll(".privacy-third-party-icons-item").classed("active", (d2) => d2 === "true").select("input").property("checked", (d2) => d2 === "true");
-      selection2.selectAll(".privacy-link").data([0]).enter().append("div").attr("class", "privacy-link").append("a").attr("target", "_blank").call(svgIcon("#iD-icon-out-link", "inline")).attr("href", "https://github.com/openstreetmap/iD/blob/release/PRIVACY.md").append("span").call(_t.append("preferences.privacy.privacy_link"));
-    }
-    corePreferences.onChange("preferences.privacy.thirdpartyicons", section.reRender);
-    return section;
-  }
-
   // modules/ui/splash.js
   function uiSplash(context) {
     return (selection2) => {
@@ -67819,8 +67799,7 @@
         showSplash = true;
       }
       corePreferences("sawSplash", true);
-      corePreferences("sawPrivacyVersion", context.privacyVersion);
-      _mainFileFetcher.get("intro_graph");
+      corePreferences("hashtags", __team_selected);
       let modalSelection = uiModal(selection2);
       modalSelection.select(".modal").attr("class", "modal-splash modal");
       let introModal = modalSelection.select(".content").append("div").attr("class", "fillL");
@@ -67832,9 +67811,6 @@
       team_select.append("option").attr("value", "spain").html("Romania");
       team_select.append("option").attr("value", "slovakia").html("Slovakia");
       team_select.append("option").attr("value", "spain").html("Spain");
-      team_select.on("change", () => {
-        __team_selected = document.getElementById("team").value + " #EuthMappers";
-      });
       let modalSection = introModal.append("div").attr("class", "modal-section");
       modalSection.append("p").html("Welcome to <b>Sandbox for editing</b> by <b>EUthMappers</b>");
       let buttonWrap = introModal.append("div").attr("class", "modal-actions");
@@ -67842,6 +67818,8 @@
         if (document.getElementById("team").value != "null") {
           context.container().call(uiIntro(context));
           modalSelection.close();
+          __team_selected = document.getElementById("team").value + " #EuthMappers";
+          corePreferences("hashtags", __team_selected);
         }
       });
       walkthrough.append("svg").attr("class", "logo logo-walkthrough").append("use").attr("xlink:href", "#iD-logo-walkthrough");
@@ -67850,6 +67828,8 @@
         if (document.getElementById("team").value != "null") {
           modalSelection.close();
           console.log(__team_selected);
+          __team_selected = document.getElementById("team").value + " #EuthMappers";
+          corePreferences("hashtags", __team_selected);
         }
       });
       startEditing.append("svg").attr("class", "logo logo-features").append("use").attr("xlink:href", "#iD-logo-features");
@@ -70335,6 +70315,26 @@
       uiSectionMapFeatures(context)
     ]);
     return mapDataPane;
+  }
+
+  // modules/ui/sections/privacy.js
+  function uiSectionPrivacy(context) {
+    let section = uiSection("preferences-third-party", context).label(() => _t.append("preferences.privacy.title")).disclosureContent(renderDisclosureContent);
+    function renderDisclosureContent(selection2) {
+      selection2.selectAll(".privacy-options-list").data([0]).enter().append("ul").attr("class", "layer-list privacy-options-list");
+      let thirdPartyIconsEnter = selection2.select(".privacy-options-list").selectAll(".privacy-third-party-icons-item").data([corePreferences("preferences.privacy.thirdpartyicons") || "true"]).enter().append("li").attr("class", "privacy-third-party-icons-item").append("label").call(
+        uiTooltip().title(() => _t.append("preferences.privacy.third_party_icons.tooltip")).placement("bottom")
+      );
+      thirdPartyIconsEnter.append("input").attr("type", "checkbox").on("change", (d3_event, d2) => {
+        d3_event.preventDefault();
+        corePreferences("preferences.privacy.thirdpartyicons", d2 === "true" ? "false" : "true");
+      });
+      thirdPartyIconsEnter.append("span").call(_t.append("preferences.privacy.third_party_icons.description"));
+      selection2.selectAll(".privacy-third-party-icons-item").classed("active", (d2) => d2 === "true").select("input").property("checked", (d2) => d2 === "true");
+      selection2.selectAll(".privacy-link").data([0]).enter().append("div").attr("class", "privacy-link").append("a").attr("target", "_blank").call(svgIcon("#iD-icon-out-link", "inline")).attr("href", "https://github.com/openstreetmap/iD/blob/release/PRIVACY.md").append("span").call(_t.append("preferences.privacy.privacy_link"));
+    }
+    corePreferences.onChange("preferences.privacy.thirdpartyicons", section.reRender);
+    return section;
   }
 
   // modules/ui/panes/preferences.js

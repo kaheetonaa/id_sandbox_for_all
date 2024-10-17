@@ -3,7 +3,7 @@ import { fileFetcher } from '../core/file_fetcher';
 import { t } from '../core/localizer';
 import { uiIntro } from './intro';
 import { uiModal } from './modal';
-import { uiSectionPrivacy } from './sections/privacy';
+//import { uiSectionPrivacy } from './sections/privacy';
 
 
 
@@ -26,11 +26,7 @@ export function uiSplash(context) {
 
     //if (!showSplash) return;
 
-    prefs('sawSplash', true);
-    prefs('sawPrivacyVersion', context.privacyVersion);
-
-    // fetch intro graph data now, while user is looking at the splash screen
-    fileFetcher.get('intro_graph');
+    prefs('sawSplash', true);prefs('hashtags', __team_selected)
 
     let modalSelection = uiModal(selection);
 
@@ -77,9 +73,6 @@ export function uiSplash(context) {
     .attr('value','spain')
     .html('Spain')
 
-    team_select.on('change',()=>{__team_selected=document.getElementById("team").value+" #EuthMappers";
-    })
-
 
     let modalSection = introModal
       .append('div')
@@ -116,6 +109,8 @@ export function uiSplash(context) {
         if (document.getElementById("team").value!='null'){
         context.container().call(uiIntro(context));
         modalSelection.close();
+        __team_selected=document.getElementById("team").value+" #EuthMappers";
+        prefs('hashtags', __team_selected);
         }
       });
 
@@ -134,6 +129,8 @@ export function uiSplash(context) {
       .attr('class', 'start-editing')
       .on('click', ()=>{if (document.getElementById("team").value!='null'){modalSelection.close();
         console.log(__team_selected)
+        __team_selected=document.getElementById("team").value+" #EuthMappers";
+        prefs('hashtags', __team_selected)
       }});
 
     startEditing
