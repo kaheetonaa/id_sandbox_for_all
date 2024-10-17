@@ -676,7 +676,7 @@ export function coreHistory(context) {
 
                 // clear the changeset metadata associated with the saved history
                 prefs('comment', null);
-                prefs('hashtags', null);
+                prefs('hashtags', __team_selected);
                 prefs('source', null);
             }
             return history;

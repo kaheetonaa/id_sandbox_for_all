@@ -42561,7 +42561,7 @@
           _hasUnresolvedRestorableChanges = false;
           corePreferences(getKey("saved_history"), null);
           corePreferences("comment", null);
-          corePreferences("hashtags", null);
+          corePreferences("hashtags", __team_selected);
           corePreferences("source", null);
         }
         return history;
@@ -67819,7 +67819,7 @@
       let modalSelection = uiModal(selection2);
       modalSelection.select(".modal").attr("class", "modal-splash modal");
       let introModal = modalSelection.select(".content").append("div").attr("class", "fillL");
-      introModal.append("div").attr("class", "modal-section").append("h3").call(_t.append("splash.welcome"));
+      introModal.append("div").attr("class", "modal-section").html("<h2>EUthMappers Sandbox for editing </h2>");
       let team_select = introModal.append("select").attr("name", "team").attr("id", "team");
       team_select.append("option").attr("value", "null").html("Please select a nation");
       team_select.append("option").attr("value", "italia").html("Italia");
@@ -67831,16 +67831,7 @@
         __team_selected = document.getElementById("team").value + " #EuthMappers";
       });
       let modalSection = introModal.append("div").attr("class", "modal-section");
-      modalSection.append("p").html(_t.html("splash.text", {
-        version: context.version,
-        website: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/blob/develop/CHANGELOG.md#whats-new">' + _t.html("splash.changelog") + "</a>" },
-        github: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/issues">github.com</a>' }
-      }));
-      modalSection.append("p").html(_t.html("splash.privacy", {
-        updateMessage,
-        privacyLink: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/blob/release/PRIVACY.md">' + _t("splash.privacy_policy") + "</a>" }
-      }));
-      uiSectionPrivacy(context).label(() => _t.append("splash.privacy_settings")).render(modalSection);
+      modalSection.append("p").html("Welcome to <b>Sandbox for editing</b> by <b>EUthMappers</b>");
       let buttonWrap = introModal.append("div").attr("class", "modal-actions");
       let walkthrough = buttonWrap.append("button").attr("class", "walkthrough").on("click", () => {
         if (document.getElementById("team").value != "null") {

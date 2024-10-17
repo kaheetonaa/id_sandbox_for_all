@@ -44,8 +44,9 @@ export function uiSplash(context) {
     introModal
       .append('div')
       .attr('class','modal-section')
-      .append('h3')
-      .call(t.append('splash.welcome'));
+      //.append('h3')
+      .html("<h2>EUthMappers Sandbox for editing </h2>")
+      //.call(t.append('splash.welcome'));
 
     let team_select=introModal
     .append('select')
@@ -86,23 +87,23 @@ export function uiSplash(context) {
 
     modalSection
       .append('p')
-      .html(t.html('splash.text', {
-        version: context.version,
-        website: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/blob/develop/CHANGELOG.md#whats-new">' + t.html('splash.changelog') + '</a>' },
-        github: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/issues">github.com</a>' }
-      }));
+      .html('Welcome to <b>Sandbox for editing</b> by <b>EUthMappers</b>')//t.html('splash.text', {
+        //version: context.version,
+        //website: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/blob/develop/CHANGELOG.md#whats-new">' + t.html('splash.changelog') + '</a>' },
+        //github: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/issues">github.com</a>' }
+      //}));
 
-    modalSection
-      .append('p')
-      .html(t.html('splash.privacy', {
-        updateMessage: updateMessage,
-        privacyLink: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/blob/release/PRIVACY.md">' +
-          t('splash.privacy_policy') + '</a>' }
-      }));
+    //modalSection
+    //  .append('p')
+    //  .html(t.html('splash.privacy', {
+    //    updateMessage: updateMessage,
+    //    privacyLink: { html: '<a target="_blank" href="https://github.com/openstreetmap/iD/blob/release/PRIVACY.md">' +
+    //      t('splash.privacy_policy') + '</a>' }
+    //  }));
 
-    uiSectionPrivacy(context)
-      .label(() => t.append('splash.privacy_settings'))
-      .render(modalSection);
+    //uiSectionPrivacy(context)
+    //  .label(() => t.append('splash.privacy_settings'))
+    //  .render(modalSection);
 
     let buttonWrap = introModal
       .append('div')
