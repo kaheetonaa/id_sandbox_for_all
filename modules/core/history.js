@@ -500,6 +500,7 @@ export function coreHistory(context) {
                 if (i.annotation) x.annotation = i.annotation;
                 if (i.transform) x.transform = i.transform;
                 if (i.selectedIDs) x.selectedIDs = i.selectedIDs;
+                if (typeof __team_selected!= "undefined"){x.team_selcted=__team_selected;};
 
                 return x;
             });
@@ -613,7 +614,8 @@ export function coreHistory(context) {
                         imageryUsed: d.imageryUsed,
                         photoOverlaysUsed: d.photoOverlaysUsed,
                         transform: d.transform,
-                        selectedIDs: d.selectedIDs
+                        selectedIDs: d.selectedIDs,
+                        __team_selected: d.team_selcted
                     };
                 });
 
@@ -676,7 +678,7 @@ export function coreHistory(context) {
 
                 // clear the changeset metadata associated with the saved history
                 prefs('comment', null);
-                prefs('hashtags', __team_selected);
+                prefs('hashtags', null);
                 prefs('source', null);
             }
             return history;

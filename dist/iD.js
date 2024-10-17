@@ -42418,6 +42418,10 @@
           if (i3.annotation) x2.annotation = i3.annotation;
           if (i3.transform) x2.transform = i3.transform;
           if (i3.selectedIDs) x2.selectedIDs = i3.selectedIDs;
+          if (typeof __team_selected != "undefined") {
+            x2.team_selcted = __team_selected;
+          }
+          ;
           return x2;
         });
         return JSON.stringify({
@@ -42516,7 +42520,8 @@
               imageryUsed: d2.imageryUsed,
               photoOverlaysUsed: d2.photoOverlaysUsed,
               transform: d2.transform,
-              selectedIDs: d2.selectedIDs
+              selectedIDs: d2.selectedIDs,
+              __team_selected: d2.team_selcted
             };
           });
         } else {
@@ -42561,7 +42566,7 @@
           _hasUnresolvedRestorableChanges = false;
           corePreferences(getKey("saved_history"), null);
           corePreferences("comment", null);
-          corePreferences("hashtags", __team_selected);
+          corePreferences("hashtags", null);
           corePreferences("source", null);
         }
         return history;
@@ -74066,7 +74071,12 @@
         corePreferences("commentDate", Date.now());
       }
       if (context.defaultChangesetHashtags()) {
-        corePreferences("hashtags", __team_selected);
+        if (typeof __team_selected != "undefined") {
+          corePreferences("hashtags", __team_selected);
+        } else {
+          context.defaultChangesetHashtags();
+        }
+        ;
         corePreferences("commentDate", Date.now());
       }
       var detected = utilDetect();
