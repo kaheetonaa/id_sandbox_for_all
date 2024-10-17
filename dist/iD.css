@@ -3647,7 +3647,7 @@
 .ideditor a,
 .ideditor a:visited,
 .ideditor a:active {
-    color: #7092ff;
+    color: #2b59a8;
 }
 .ideditor a:focus {
     color: #597be7;
@@ -3674,7 +3674,7 @@
 }
 
 .ideditor code {
-    font-family: ui-monospace, monospace, monospace;
+    font-family: inherit;
     background: rgba(174, 174, 174, 0.25);
     padding: 1px 2px;
 }
@@ -3864,7 +3864,7 @@
     }
 }
 .ideditor button.active {
-    background: #7092ff;
+    background: #2b59a8;
 }
 .ideditor button.disabled {
     background-color: rgba(255,255,255,.25);
@@ -3901,7 +3901,7 @@
 
 /* Action buttons */
 .ideditor button.action {
-    background: #7092ff;
+    background: #2b59a8;
     color: #fff;
     font-weight: bold;
 }
@@ -4509,7 +4509,7 @@
     opacity: 0.5;
 }
 .ideditor .feature-list-item .entity-type {
-    color: #7092ff;
+    color: #2b59a8;
     font-weight: bold;
 }
 .ideditor .feature-list-item:active .entity-type,
@@ -5189,12 +5189,12 @@
 .ideditor .form-field-input-combo input.raw-value,
 .ideditor .form-field-input-semicombo input.raw-value,
 .ideditor .form-field-input-multicombo input.raw-value {
-    font-family: monospace;
+    font-family: inherit;
 }
 .ideditor .form-field-input-combo input.known-value,
 .ideditor .form-field-input-semicombo input.known-value,
 .ideditor .form-field-input-multicombo input.known-value {
-    color: #7092ff;
+    color: #2b59a8;
 }
 
 .ideditor .form-field-input-multicombo ul.chiplist {
@@ -5223,7 +5223,7 @@
     background-color: #eff2f7;
     border: 1px solid #ccd5e3;
     max-width: 100%;
-    color: #7092ff;
+    color: #2b59a8;
 }
 .ideditor .form-field-input-multicombo li.chip.negated span {
     text-decoration: line-through;
@@ -5248,7 +5248,7 @@
     cursor: grabbing;
 }
 .ideditor .form-field-input-multicombo li.chip.raw-value {
-    font-family: monospace;
+    font-family: "Comfortaa";
     color: #333;
 }
 .ideditor .form-field-input-multicombo li.mixed {
@@ -5267,7 +5267,7 @@
 
 .ideditor .form-field-input-multicombo a,
 .ideditor .form-field-input-multicombo button {
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: "Comfortaa";
     font-size: 16px !important;
     padding: 0px 5px 0px 5px;
     margin: 0;
@@ -5447,7 +5447,7 @@
     align-items: center;
     background: #fff;
     padding: 5px 10px;
-    color: #7092ff;
+    color: #2b59a8;
     border: 1px solid #ccc;
     border-top: 0;
     cursor: pointer;
@@ -5520,7 +5520,7 @@
     width: 100%;
     padding: 5px 10px;
     background-color: #fff;
-    color: #7092ff;
+    color: #2b59a8;
     cursor: pointer;
 }
 .ideditor .form-field-input-radio > label.mixed {
@@ -5951,7 +5951,7 @@
 }
 
 .ideditor .combobox .combobox-option.raw-option {
-    font-family: monospace;
+    font-family: "Comfortaa";
     color: #333;
 }
 
@@ -5984,7 +5984,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background-color: #7092ff;
+    background-color: #2b59a8;
     border-right-style: solid;
     border-right-color: lightgray;
 }
@@ -6038,7 +6038,7 @@
     color: #666;
 }
 .ideditor .field-help-nav-item.active {
-    color: #7092ff;
+    color: #2b59a8;
     border-bottom: 2px solid;
 }
 .ideditor .field-help-nav-item:active,
@@ -6163,7 +6163,7 @@
 }
 .ideditor button.raw-tag-option.selected {
     color: #fff;
-    background: #7092ff;
+    background: #2b59a8;
 }
 .ideditor button.raw-tag-option svg.icon {
     width: 14px;
@@ -6181,7 +6181,7 @@
     width: 100%;
     height: 100%;
     min-height: 32px;
-    font-family: monospace;
+    font-family: inherit;
     white-space: pre;
 }
 
@@ -6786,14 +6786,14 @@
 }
 .ideditor .map-control > button.active,
 .ideditor .map-control > button.active:active {
-    background: #7092ff;
+    background: #2b59a8;
 }
 @media (hover: hover) {
     .ideditor .map-control > button:not(.disabled):hover {
         background: rgba(0, 0, 0, .8);
     }
     .ideditor .map-control > button.active:hover {
-        background: #7092ff;
+        background: #2b59a8;
     }
 }
 
@@ -6892,7 +6892,7 @@
 
 .ideditor .layer-list > li {
     background-color: #fff;
-    color: #7092ff;
+    color: #2b59a8;
     position: relative;
     display: flex;
 }
@@ -7068,7 +7068,7 @@
     flex: 0 0 20px;
     height: 20px;
     width: 20px;
-    background: #7092ff;
+    background: #2b59a8;
     color: #fff;
 }
 .ideditor button.autofix.action:focus,
@@ -7379,7 +7379,7 @@
 }
 .ideditor .issue-info .tagDiff-cell {
     padding: 2px 10px;
-    font-family: monospace;
+    font-family: "Comfortaa";
     font-size: 10px;
     border: 1px solid #ccc;
 }
@@ -8149,7 +8149,7 @@
 
 .ideditor .panel-content .button {
     display: inline-block;
-    background: #7092ff;
+    background: #2b59a8;
     border-radius: 2px;
     padding: 0 4px;
     margin-top: 10px;
@@ -8594,7 +8594,7 @@
     display: flex;
 }
 .ideditor .modal-actions button {
-    color: #7092ff;
+    color: #2b59a8;
     border-bottom: 1px solid #ccc;
     border-radius: 0;
     min-height: 160px;
@@ -8626,7 +8626,7 @@
 /* Restore Modal
 ------------------------------------------------------- */
 .ideditor .modal-actions .logo-restore {
-    color: #7092ff;
+    color: #2b59a8;
 }
 .ideditor .modal-actions .logo-reset {
     color: #e06c5e;
@@ -8736,7 +8736,7 @@
 ------------------------------------------------------- */
 .ideditor .modal-actions .logo-walkthrough,
 .ideditor .modal-actions .logo-features {
-    color: #7092ff;
+    color: #2b59a8;
 }
 
 .ideditor .modal-splash .section-preferences-third-party {
@@ -8775,7 +8775,7 @@
     font-weight: bold;
 }
 .ideditor .modal-shortcuts a.tab.active {
-    color: #7092ff;
+    color: #2b59a8;
     border-bottom: 2px solid;
 }
 .ideditor .modal-shortcuts a.tab:focus,
@@ -9375,7 +9375,7 @@ body {
     animation-direction: alternate;
 }
 @keyframes pulse {
-    from  { background: #7092ff; }
+    from  { background: #2b59a8; }
     to    { background: #c6d4ff; }
 }
 
@@ -9491,5 +9491,29 @@ body {
 .ideditor .huge-modal-button .illustration {
     height: 100px;
     width: 100px;
-    color: #7092ff;
+    color: #2b59a8;
+}
+
+/* Notices (Zoom in to Edit)
+------------------------------------------------------- */
+
+.ideditor select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background-color: #62ccec80;
+    border-width:1px;
+    border-color:#62ccec;
+    position:relative;
+    right:10%;
+    left:10%;
+    top:10px;
+    width:80%;
+    height: 30%;
+    font-family: "Comfortaa";
+    font-size: 16px;
+    padding: 10px 10px;
+    cursor: inherit;
+    line-height: inherit;
+    border-radius:10px;
 }

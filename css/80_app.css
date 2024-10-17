@@ -138,7 +138,7 @@ strong {
 a,
 a:visited,
 a:active {
-    color: #7092ff;
+    color: #2b59a8;
 }
 a:focus {
     color: #597be7;
@@ -165,7 +165,7 @@ kbd {
 }
 
 code {
-    font-family: ui-monospace, monospace, monospace;
+    font-family: inherit;
     background: rgba(174, 174, 174, 0.25);
     padding: 1px 2px;
 }
@@ -352,7 +352,7 @@ button.hover {
     }
 }
 button.active {
-    background: #7092ff;
+    background: #2b59a8;
 }
 button.disabled {
     background-color: rgba(255,255,255,.25);
@@ -389,7 +389,7 @@ button.disabled {
 
 /* Action buttons */
 button.action {
-    background: #7092ff;
+    background: #2b59a8;
     color: #fff;
     font-weight: bold;
 }
@@ -995,7 +995,7 @@ a.hide-toggle {
     opacity: 0.5;
 }
 .feature-list-item .entity-type {
-    color: #7092ff;
+    color: #2b59a8;
     font-weight: bold;
 }
 .feature-list-item:active .entity-type,
@@ -1672,12 +1672,12 @@ input.date-selector {
 .form-field-input-combo input.raw-value,
 .form-field-input-semicombo input.raw-value,
 .form-field-input-multicombo input.raw-value {
-    font-family: monospace;
+    font-family: inherit;
 }
 .form-field-input-combo input.known-value,
 .form-field-input-semicombo input.known-value,
 .form-field-input-multicombo input.known-value {
-    color: #7092ff;
+    color: #2b59a8;
 }
 
 .form-field-input-multicombo ul.chiplist {
@@ -1706,7 +1706,7 @@ input.date-selector {
     background-color: #eff2f7;
     border: 1px solid #ccd5e3;
     max-width: 100%;
-    color: #7092ff;
+    color: #2b59a8;
 }
 .form-field-input-multicombo li.chip.negated span {
     text-decoration: line-through;
@@ -1731,7 +1731,7 @@ input.date-selector {
     cursor: grabbing;
 }
 .form-field-input-multicombo li.chip.raw-value {
-    font-family: monospace;
+    font-family: "Comfortaa";
     color: #333;
 }
 .form-field-input-multicombo li.mixed {
@@ -1750,7 +1750,7 @@ input.date-selector {
 
 .form-field-input-multicombo a,
 .form-field-input-multicombo button {
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: "Comfortaa";
     font-size: 16px !important;
     padding: 0px 5px 0px 5px;
     margin: 0;
@@ -1930,7 +1930,7 @@ input.date-selector {
     align-items: center;
     background: #fff;
     padding: 5px 10px;
-    color: #7092ff;
+    color: #2b59a8;
     border: 1px solid #ccc;
     border-top: 0;
     cursor: pointer;
@@ -2003,7 +2003,7 @@ input.date-selector {
     width: 100%;
     padding: 5px 10px;
     background-color: #fff;
-    color: #7092ff;
+    color: #2b59a8;
     cursor: pointer;
 }
 .form-field-input-radio > label.mixed {
@@ -2430,7 +2430,7 @@ div.combobox {
 }
 
 .combobox .combobox-option.raw-option {
-    font-family: monospace;
+    font-family: "Comfortaa";
     color: #333;
 }
 
@@ -2463,7 +2463,7 @@ div.combobox {
     left: 0;
     right: 0;
     height: 4px;
-    background-color: #7092ff;
+    background-color: #2b59a8;
     border-right-style: solid;
     border-right-color: lightgray;
 }
@@ -2517,7 +2517,7 @@ div.combobox {
     color: #666;
 }
 .field-help-nav-item.active {
-    color: #7092ff;
+    color: #2b59a8;
     border-bottom: 2px solid;
 }
 .field-help-nav-item:active,
@@ -2642,7 +2642,7 @@ button.raw-tag-option.active {
 }
 button.raw-tag-option.selected {
     color: #fff;
-    background: #7092ff;
+    background: #2b59a8;
 }
 button.raw-tag-option svg.icon {
     width: 14px;
@@ -2660,7 +2660,7 @@ button.raw-tag-option svg.icon {
     width: 100%;
     height: 100%;
     min-height: 32px;
-    font-family: monospace;
+    font-family: inherit;
     white-space: pre;
 }
 
@@ -3264,14 +3264,14 @@ img.tag-reference-wiki-image {
 }
 .map-control > button.active,
 .map-control > button.active:active {
-    background: #7092ff;
+    background: #2b59a8;
 }
 @media (hover: hover) {
     .map-control > button:not(.disabled):hover {
         background: rgba(0, 0, 0, .8);
     }
     .map-control > button.active:hover {
-        background: #7092ff;
+        background: #2b59a8;
     }
 }
 
@@ -3370,7 +3370,7 @@ div.full-screen > button:focus {
 
 .layer-list > li {
     background-color: #fff;
-    color: #7092ff;
+    color: #2b59a8;
     position: relative;
     display: flex;
 }
@@ -3546,7 +3546,7 @@ button.autofix.action {
     flex: 0 0 20px;
     height: 20px;
     width: 20px;
-    background: #7092ff;
+    background: #2b59a8;
     color: #fff;
 }
 button.autofix.action:focus,
@@ -3857,7 +3857,7 @@ li.issue-fix-item button:not(.actionable) .fix-icon {
 }
 .issue-info .tagDiff-cell {
     padding: 2px 10px;
-    font-family: monospace;
+    font-family: "Comfortaa";
     font-size: 10px;
     border: 1px solid #ccc;
 }
@@ -4613,7 +4613,7 @@ img.tile-debug {
 
 .panel-content .button {
     display: inline-block;
-    background: #7092ff;
+    background: #2b59a8;
     border-radius: 2px;
     padding: 0 4px;
     margin-top: 10px;
@@ -5056,7 +5056,7 @@ img.tile-debug {
     display: flex;
 }
 .modal-actions button {
-    color: #7092ff;
+    color: #2b59a8;
     border-bottom: 1px solid #ccc;
     border-radius: 0;
     min-height: 160px;
@@ -5088,7 +5088,7 @@ img.tile-debug {
 /* Restore Modal
 ------------------------------------------------------- */
 .modal-actions .logo-restore {
-    color: #7092ff;
+    color: #2b59a8;
 }
 .modal-actions .logo-reset {
     color: #e06c5e;
@@ -5198,7 +5198,7 @@ img.tile-debug {
 ------------------------------------------------------- */
 .modal-actions .logo-walkthrough,
 .modal-actions .logo-features {
-    color: #7092ff;
+    color: #2b59a8;
 }
 
 .modal-splash .section-preferences-third-party {
@@ -5237,7 +5237,7 @@ img.tile-debug {
     font-weight: bold;
 }
 .modal-shortcuts a.tab.active {
-    color: #7092ff;
+    color: #2b59a8;
     border-bottom: 2px solid;
 }
 .modal-shortcuts a.tab:focus,
@@ -5837,7 +5837,7 @@ body {
     animation-direction: alternate;
 }
 @keyframes pulse {
-    from  { background: #7092ff; }
+    from  { background: #2b59a8; }
     to    { background: #c6d4ff; }
 }
 
@@ -5951,5 +5951,27 @@ body {
 .huge-modal-button .illustration {
     height: 100px;
     width: 100px;
-    color: #7092ff;
+    color: #2b59a8;
+}
+
+/* Notices (Zoom in to Edit)
+------------------------------------------------------- */
+
+select {
+    appearance: none;
+    background-color: #62ccec80;
+    border-width:1px;
+    border-color:#62ccec;
+    position:relative;
+    right:10%;
+    left:10%;
+    top:10px;
+    width:80%;
+    height: 30%;
+    font-family: "Comfortaa";
+    font-size: 16px;
+    padding: 10px 10px;
+    cursor: inherit;
+    line-height: inherit;
+    border-radius:10px;
 }
