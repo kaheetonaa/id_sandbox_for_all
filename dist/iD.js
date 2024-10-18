@@ -67661,12 +67661,10 @@
       };
       sidebar.expand = function(moveMap) {
         if (selection2.classed("collapsed")) {
-          sidebar.toggle(moveMap);
         }
       };
       sidebar.collapse = function(moveMap) {
         if (!selection2.classed("collapsed")) {
-          sidebar.toggle(moveMap);
         }
       };
       sidebar.toggle = function(moveMap) {
@@ -67681,7 +67679,7 @@
         var startMargin, endMargin, lastMargin;
         if (isCollapsing) {
           startMargin = lastMargin = 0;
-          endMargin = -sidebarWidth;
+          endMargin = -sidebarWidth - 10;
         } else {
           startMargin = lastMargin = -sidebarWidth;
           endMargin = 0;
@@ -67694,7 +67692,6 @@
           return function(t2) {
             var dx = lastMargin - Math.round(i3(t2));
             lastMargin = lastMargin - dx;
-            context.ui().onResize(moveMap ? void 0 : [dx * scaleX, 0]);
           };
         }).on("end", function() {
           if (isCollapsing) {

@@ -11,6 +11,7 @@
     content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style type='text/css'>
     /* apply document-level styling to standalone iD only */
     html,
@@ -35,6 +36,51 @@
       font-family: "Comfortaa";
       line-height: 2rem;
     }
+
+    @media screen and (orientation: portrait) {
+      .circle-button {
+    width: 15%;           /* Width of the button */
+    aspect-ratio:1/1;         /* Height of the button */
+    border-radius: 50%;     /* Makes the button circular */
+    border: none;           /* No border */
+    color: white;           /* Text color */
+    background-color: hsla(194, 78%, 65%, 0.5); /* Button color */
+    font-size: 32px;        /* Font size */
+    cursor: pointer;        /* Change cursor to pointer */
+    position: absolute;     /* Position absolute for free placement */
+    display: flex;          /* Flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center;    /* Center text vertically */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    z-index: 20;
+    }
+
+.circle-button:hover {
+    background-color: hsla(194, 78%, 65%, 0.8); /* Darker shade on hover */
+}
+
+/* Positioning buttons at different locations */
+#enter {
+    bottom: 10%;  /* 20% from the top */
+    right: 10%; /* 20% from the left */
+}
+
+#delete {
+    bottom: 10%; /* 20% from the bottom */
+    right: 30%;   /* Center horizontally */
+}
+#Q {
+    bottom: 10%; /* 60% from the top */
+    right: 50%; /* 20% from the right */
+}
+    html,body {
+      width: 100%;
+    }
+    #sidepane {
+        display: none;
+    }
+    }
+
     h1,h2 {
       color: #62cbec;
     }
@@ -53,6 +99,12 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 </head>
+
+<div class="virtual-key">
+  <button class="circle-button" id="enter"><i class="fa fa-check"></i></button>
+  <button class="circle-button" id="delete"><i class="fa fa-close"></i></button>
+  <button class="circle-button" id="Q"><i class="fa fa-square"></i></button>
+</div>
 <div id='sidepane'>
   <div style="padding: 5%">
     <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
@@ -111,7 +163,7 @@
 
 <body>
   <div id='id-container'></div>
-
+  
   <script>
     var container = document.getElementById('id-container');
     var newScript = document.createElement('script');
@@ -142,6 +194,31 @@
       }
       //}
     }
+
+    function triggerKeyPress(keyCode) {
+    const event = new KeyboardEvent('keydown', {
+        key: keyCode,
+        code: keyCode,
+        keyCode: keyCode,
+        charCode: keyCode,
+        which: keyCode,
+        bubbles: true
+    });
+    document.dispatchEvent(event);
+}
+
+// Handle Enter key
+document.getElementById("enter").addEventListener("click", function() {
+    triggerKeyPress('Enter');
+});
+// Handle Delete key
+document.getElementById("delete").addEventListener("click", function() {
+    triggerKeyPress('Delete');
+});
+
+document.getElementById("Q").addEventListener("click", function() {
+    triggerKeyPress('Q');
+});
   </script>
 </body>
 

@@ -4306,7 +4306,7 @@
 
 /* Sidebar / Inspector
 ------------------------------------------------------- */
-.ideditor .sidebar {
+/*.sidebar {
     position: relative;
     float: left;
     height: 100%;
@@ -4315,7 +4315,20 @@
     -ms-user-select: element;
     border: 0px solid #ccc;
     border-right-width: 1px;
+}*/
+
+.ideditor .sidebar {
+    position: fixed; 
+    bottom: 10%; 
+    left: 10px; 
+    width: 80%; 
+    height: 50%; 
+    z-index: 10; 
+    background-color: #f6f6f6; 
+    border: 1px solid #ccc; 
+    /*transition: all 0.3s ease-in-out;*/
 }
+
 .ideditor[dir='rtl'] .sidebar {
     float: right;
     border-right-width: 0px;
@@ -4326,7 +4339,7 @@
     position: absolute;
     top: 0;
     right: -10px;
-    width: 10px;
+    width: 20px;
     height: 100%;
     cursor: col-resize;
     /* disable drag-to-select */
