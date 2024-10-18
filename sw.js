@@ -1,11 +1,12 @@
 self.addEventListener('install', (e) => {
     e.waitUntil(
       caches.open('iDSandbox4All').then((cache) => cache.addAll([
-        'index.html',
-        'land.html',
-        'icon/icon.png',
-        'dist/iD.js',
-        'dist/iD.css',
+        '/id_sandbox_for_all/',
+        '/id_sandbox_for_all/index.html',
+        '/id_sandbox_for_all/land.html',
+        '/id_sandbox_for_all/icon/icon.png',
+        '/id_sandbox_for_all/dist/iD.js',
+        '/id_sandbox_for_all/dist/iD.css',
       ])),
     );
   });
