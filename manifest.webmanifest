@@ -1,32 +1,15 @@
 {
-    "name": "EuthMappers iDSandbox4All",
-    "short_name": "iDSandbox4All",
-    "scope": "./",
-    "start_url": "index.html",
+    "background_color": "purple",
+    "description": "idEditor for Sandbox4All",
+    "display": "fullscreen",
     "icons": [
-     {
-      "src": "public/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-     },
-     {
-      "src": "public/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-     },
-     {
-      "src": "public/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-     },
-     {
-      "src": "public/maskable_icon_x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-     }
+      {
+        "src": "icon/icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
     ],
-    "theme_color": "#62cbec",
-    "background_color": "#62cbec",
-    "display": "standalone"
-   }
+    "name": "Sandbox4All",
+    "short_name": "Sandbox4All",
+    "start_url": "index.html"
+}
