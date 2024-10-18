@@ -2,6 +2,7 @@ self.addEventListener('install', (e) => {
     e.waitUntil(
       caches.open('iDSandbox4All').then((cache) => cache.addAll([
         'index.html',
+        'land.html',
         'icon/icon.png',
         'dist/iD.js',
         'dist/iD.css',
