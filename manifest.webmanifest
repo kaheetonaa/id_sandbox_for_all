@@ -15,6 +15,9 @@
     "url_handlers":[
       {
         "origin":"https://kaheetonaa.github.io/id_sandbox_for_all/"
-      }
+      },
+{
+"origin":"https://result-euthmappersquizz.streamlit.app"
+}
     ]
 }
