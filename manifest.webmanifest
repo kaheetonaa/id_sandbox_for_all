@@ -14,10 +14,10 @@
     "start_url": "/id_sandbox_for_all/",
     "url_handlers":[
       {
-        "origin":"https://kaheetonaa.github.io/id_sandbox_for_all/"
+        "origin":"https://kaheetonaa.github.io/"
       },
 {
-"origin":"https://result-euthmappersquizz.streamlit.app"
+"origin":"https://tasks.hotosm.org/"
 }
     ]
 }
