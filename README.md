@@ -2,7 +2,9 @@
 
 [![build](https://github.com/openstreetmap/iD/workflows/build/badge.svg)](https://github.com/openstreetmap/iD/actions?query=workflow%3A%22build%22)
 
-## Basics
+## Basic
+
+[sandbox4all](https://kaheetonaa.github.io/id_sandbox_for_all/)
 
 * iD is a JavaScript [OpenStreetMap](https://www.openstreetmap.org/) editor.
 * It's intentionally simple. It lets you do the most basic tasks while not breaking other people's data.
