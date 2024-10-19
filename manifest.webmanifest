@@ -12,5 +12,6 @@
     "name": "iDSandbox4All",
     "short_name": "iDSandbox4All",
     "start_url": ".",
-    "scope" : "./"
+    "scope" : "./",
+"display_override": ["tabbed"]
 }
