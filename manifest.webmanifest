@@ -22,4 +22,10 @@
       "url": "tm.html"
     }
   }
+"url_handlers" : [
+        {
+            "origin": "https://kaheetonaa.github.io"
+        }
+]
+
 }
