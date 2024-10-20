@@ -1,7 +1,7 @@
 {
     "background_color": "#62cbec",
     "description": "idEditor for Sandbox4All",
-    "display": "fullscreen",
+    "display": "standalone",
     "icons": [
       {
         "src": "icon/euth-icon.png",
