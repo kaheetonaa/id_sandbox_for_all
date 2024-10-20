@@ -13,15 +13,6 @@
     "short_name": "iDSandbox4All",
     "start_url": ".",
     "scope" : "./",
-"display_override": ["tabbed"],
-"tab_strip": {
-    "home_tab": {
-      "url": "."
-    },
-    "new_tab_button": {
-      "url": "tm.html"
-    }
-  },
 "url_handlers" : [
         {
             "origin": "https://kaheetonaa.github.io"
