@@ -16,6 +16,9 @@
   "url_handlers": [
     {
       "origin": "https://kaheetonaa.github.io/"
+    },
+    {
+      "origin":"tasks.hotosm.org"
     }
   ],
   "display_override": [
