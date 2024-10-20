@@ -1,5 +1,24 @@
-hello world <br>
-
-<a href="https://kaheetonaa.github.io/id_sandbox_for_all/">link2</href>
-
-<iframe width ="100%"  src="https://tasks.hotosm.org/projects/14517" title="description"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Tag Passing</title>
+    <script>
+        function passHashTags() {
+            const hashTags = window.location.hash;
+            if (hashTags) {
+                window.location.href = `index.html${hashTags}`;
+            } else {
+                window.location.href = 'index.html';
+            }
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Page 1</h1>
+    <p>Click the button below to pass hashtags to Page 2.</p>
+    <button onclick="passHashTags()">Go to Page 2</button>
+</body>
+</html>
