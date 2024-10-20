@@ -10,8 +10,7 @@
   <link rel='stylesheet' href='dist/iD.css'>
   <link rel='icon' type='image/png' href='icon/euth-icon.png'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-  <meta name="viewport"
-    content="width=device-width; initial-scale=1; viewport-fit=cover">
+  <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover">
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,58 +39,84 @@
       line-height: 2rem;
     }
 
-    .virtual-key{
+    .virtual-key {
       display: none;
     }
 
     @media screen and (orientation: portrait) {
-      .virtual-key{
-      display: block;
-    }
+      .virtual-key {
+        display: block;
+      }
+
       .circle-button {
-    width: 15%;           /* Width of the button */
-    aspect-ratio:1/1;         /* Height of the button */
-    border-radius: 50%;     /* Makes the button circular */
-    border: none;           /* No border */
-    color: white;           /* Text color */
-    background-color: hsla(194, 78%, 65%, 0.5); /* Button color */
-    font-size: 32px;        /* Font size */
-    cursor: pointer;        /* Change cursor to pointer */
-    position: absolute;     /* Position absolute for free placement */
-    display: flex;          /* Flexbox for centering text */
-    justify-content: center; /* Center text horizontally */
-    align-items: center;    /* Center text vertically */
-    transition: background-color 0.3s; /* Smooth background color transition */
-    z-index: 20;
-    }
+        width: 15%;
+        /* Width of the button */
+        aspect-ratio: 1/1;
+        /* Height of the button */
+        border-radius: 50%;
+        /* Makes the button circular */
+        border: none;
+        /* No border */
+        color: white;
+        /* Text color */
+        background-color: hsla(194, 78%, 65%, 0.5);
+        /* Button color */
+        font-size: 32px;
+        /* Font size */
+        cursor: pointer;
+        /* Change cursor to pointer */
+        position: absolute;
+        /* Position absolute for free placement */
+        display: flex;
+        /* Flexbox for centering text */
+        justify-content: center;
+        /* Center text horizontally */
+        align-items: center;
+        /* Center text vertically */
+        transition: background-color 0.3s;
+        /* Smooth background color transition */
+        z-index: 20;
+      }
 
-.circle-button:hover {
-    background-color: hsla(194, 78%, 65%, 0.8); /* Darker shade on hover */
-}
+      .circle-button:hover {
+        background-color: hsla(194, 78%, 65%, 0.8);
+        /* Darker shade on hover */
+      }
 
-/* Positioning buttons at different locations */
-#enter {
-    bottom: 10%;  /* 20% from the top */
-    right: 10%; /* 20% from the left */
-}
+      /* Positioning buttons at different locations */
+      #enter {
+        bottom: 10%;
+        /* 20% from the top */
+        right: 10%;
+        /* 20% from the left */
+      }
 
-#delete {
-    bottom: 10%; /* 20% from the bottom */
-    right: 30%;   /* Center horizontally */
-}
-#Q {
-    bottom: 10%; /* 60% from the top */
-    right: 50%; /* 20% from the right */
-}
-    html,body {
-      width: 100%;
-    }
-    #sidepane {
+      #delete {
+        bottom: 10%;
+        /* 20% from the bottom */
+        right: 30%;
+        /* Center horizontally */
+      }
+
+      #Q {
+        bottom: 10%;
+        /* 60% from the top */
+        right: 50%;
+        /* 20% from the right */
+      }
+
+      html,
+      body {
+        width: 100%;
+      }
+
+      #sidepane {
         display: none;
-    }
+      }
     }
 
-    h1,h2 {
+    h1,
+    h2 {
       color: #62cbec;
     }
 
@@ -117,7 +142,8 @@
 </div>
 <div id='sidepane'>
   <div style="padding: 5%">
-<a href="https://tasks.hotosm.org/projects/17833/">link</a>
+    <a href="https://tasks.hotosm.org/projects/17833/">link</a>
+    <button onclick="openTaskingManager()">Go to Page 2</button>
     <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
     <h1>Sandbox for OSM editting 🪣🧤</h1>
     <div id="map"></div>
@@ -174,13 +200,13 @@
 
 <body>
   <div id='id-container'></div>
-  
+
   <script>
     if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/id_sandbox_for_all/sw.js',{scope: '/id_sandbox_for_all/'})
-    .then(() => { console.log('Service Worker Registered'); });
-  }
+      navigator.serviceWorker
+        .register('/id_sandbox_for_all/sw.js', { scope: '/id_sandbox_for_all/' })
+        .then(() => { console.log('Service Worker Registered'); });
+    }
     var container = document.getElementById('id-container');
     var newScript = document.createElement('script');
     newScript.type = 'text/javascript';
@@ -190,6 +216,9 @@
 
     document.getElementsByTagName('head')[0].appendChild(newScript);
 
+    function openTaskingManager() {
+      window.open('https://tasks.hotosm.org/projects/17833/')
+    }
 
     function checkScript() {
       //if (typeof iD === 'undefined' || !iD.utilDetect().support) {
@@ -212,29 +241,29 @@
     }
 
     function triggerKeyPress(keyCode) {
-    const event = new KeyboardEvent('keydown', {
+      const event = new KeyboardEvent('keydown', {
         key: keyCode,
         code: keyCode,
         keyCode: keyCode,
         charCode: keyCode,
         which: keyCode,
         bubbles: true
+      });
+      document.dispatchEvent(event);
+    }
+
+    // Handle Enter key
+    document.getElementById("enter").addEventListener("click", function () {
+      triggerKeyPress('Enter');
     });
-    document.dispatchEvent(event);
-}
+    // Handle Delete key
+    document.getElementById("delete").addEventListener("click", function () {
+      triggerKeyPress('Delete');
+    });
 
-// Handle Enter key
-document.getElementById("enter").addEventListener("click", function() {
-    triggerKeyPress('Enter');
-});
-// Handle Delete key
-document.getElementById("delete").addEventListener("click", function() {
-    triggerKeyPress('Delete');
-});
-
-document.getElementById("Q").addEventListener("click", function() {
-    triggerKeyPress('Q');
-});
+    document.getElementById("Q").addEventListener("click", function () {
+      triggerKeyPress('Q');
+    });
   </script>
 </body>
 
