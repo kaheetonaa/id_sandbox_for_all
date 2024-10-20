@@ -1,12 +1,13 @@
-var GHPATH = '/github-page-pwa';
-var APP_PREFIX = 'gppwa_';
+var GHPATH = '/id_sandbox_for_all';
+var APP_PREFIX = 'id_sandbox_for_all_';
 var VERSION = 'version_002';
 var URLS = [    
   `${GHPATH}/`,
+  `${GHPATH}/land.html`,
   `${GHPATH}/index.html`,
-  `${GHPATH}/css/styles.css`,
+  `${GHPATH}/dist/iD.css`,
   `${GHPATH}/img/icon.png`,
-  `${GHPATH}/js/app.js`
+  `${GHPATH}/dist/iD.js`
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
