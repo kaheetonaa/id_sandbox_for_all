@@ -15,7 +15,7 @@
   "scope": "/id_sandbox_for_all/",
   "url_handlers": [
     {
-      "origin": "https://kaheetonaa.github.io/"
+      "origin": "https://kaheetonaa.github.io/id_sandbox_for_all/"
     }
   ],
   "display_override": [
@@ -23,10 +23,10 @@
   ],
   "tab_strip": {
     "home_tab": {
-      "url": "."
+      "url": "/id_sandbox_for_all/."
     },
     "new_tab_button": {
-      "url": "tm.html"
+      "url": "/id_sandbox_for_all/tm.html"
     }
   }
 }
