@@ -11,11 +11,11 @@
   ],
   "name": "iDSandbox4All",
   "short_name": "iDSandbox4All",
-  "start_url": "/id_sandbox_for_all/",
-  "scope": "/id_sandbox_for_all/",
+  "start_url": "./id_sandbox_for_all/",
+  "scope": "./id_sandbox_for_all/",
   "url_handlers": [
     {
-      "origin": "https://kaheetonaa.github.io/id_sandbox_for_all/"
+      "origin": "./"
     }
   ],
   "display_override": [
@@ -23,10 +23,10 @@
   ],
   "tab_strip": {
     "home_tab": {
-      "url": "/id_sandbox_for_all/."
+      "url": "./"
     },
     "new_tab_button": {
-      "url": "/id_sandbox_for_all/tm.html"
+      "url": "./tm.html"
     }
   }
 }
