@@ -9,9 +9,9 @@
         function passHashTags() {
             const hashTags = window.location.hash;
             if (hashTags) {
-                opener.open(`index.html${hashTags}`);
+                window.opener.document.location.href=`index.html${hashTags}`;
             } else {
-                opener.open('index.html');
+                window.opener.document.location.href='index.html';
             }
             window.close();
         }
