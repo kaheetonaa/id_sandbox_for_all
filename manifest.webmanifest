@@ -11,7 +11,7 @@
     ],
     "name": "iDSandbox4All",
     "short_name": "iDSandbox4All",
-    "start_url": ".",
+    "start_url": "tm.html",
     "scope" : "./",
 "display_override": ["tabbed"]
 }
