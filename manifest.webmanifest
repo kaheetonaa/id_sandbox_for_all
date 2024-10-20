@@ -11,7 +11,15 @@
     ],
     "name": "iDSandbox4All",
     "short_name": "iDSandbox4All",
-    "start_url": "tm.html",
+    "start_url": ".",
     "scope" : "./",
-"display_override": ["tabbed"]
+"display_override": ["tabbed"],
+"tab_strip": {
+    "home_tab": {
+      "url": "."
+    },
+    "new_tab_button": {
+      "url": "tm.html"
+    }
+  }
 }
