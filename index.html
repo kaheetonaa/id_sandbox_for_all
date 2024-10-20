@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <meta name="pwa-capable" content="yes">
   <link rel="manifest" href="manifest.webmanifest">
-  <title>iD</title>
+  <link rel="canonical" href="https://kaheetonaa.github.io/id_sandbox_for_all/" />title>iD</title>
   <link rel='stylesheet' href='dist/iD.css'>
   <link rel='icon' type='image/png' href='icon/euth-icon.png'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
@@ -177,7 +177,7 @@
   <script>
     if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('sw.js')
+    .register('/id_sandbox_for_all/sw.js',{scope: '/id_sandbox_for_all/'})
     .then(() => { console.log('Service Worker Registered'); });
   }
     var container = document.getElementById('id-container');
