@@ -5,18 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json" />
-    <title>Hash Tag Passing</title>
-    <script>
-        function passHashTags() {
-            const hashTags = window.location.hash;
-            if (hashTags) {
-                window.opener.location.href = `index.html${hashTags}`;
-            } else {
-                window.opener.location.href = 'index.html';
-            }
-            window.close();
-        }
-    </script>
+    <title>HOT-Tasking-manager-browser</title>
 </head>
 
 <body>

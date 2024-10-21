@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json" />
+    <title>Hash Tag Passing</title>
+    <script>
+        function passHashTags() {
+            const hashTags = window.location.hash;
+            if (hashTags) {
+                window.open(`/${hashTags}`);
+            } else {
+                window.open('/');
+            }
+            window.close();
+        }
+    </script>
+
+<body>
+    <button onclick="passHashTags()">Let's mapping</button>
+</body>
+</head>
