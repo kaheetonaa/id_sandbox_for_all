@@ -1,0 +1,91 @@
+{
+  "background_color": "#62cbec",
+  "description": "idEditor for Sandbox4All",
+  "display": "standalone",
+  "display_override": ["tabbed"],
+  "icons": [
+    {
+      "src": "icon/euth-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "iDSandbox4All",
+  "short_name": "iDSandbox4All",
+  "start_url": "/", 
+  "scope": "/",
+  "url_handlers": [
+    {
+      "origin": "/"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Home",
+      "url": "/",
+      "icons": [
+        {
+          "src": "icon/euth-icon.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "TM",
+      "url": "tm.html",
+      "icons": [
+        {
+          "src": "icon/euth-icon.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Redirect",
+      "url": "redirect.html",
+      "icons": [
+        {
+          "src": "icon/euth-icon.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    },
+     {
+      "name": "HOT-OSM",
+      "url": "https://tasks.hotosm.org/",
+      "icons": [
+        {
+          "src": "icon/euth-icon.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    }
+    
+  ],
+  "tab_strip": {
+    "home_tab": {
+      "url": "/",
+      "icons": [
+        {
+          "src": "icon/euth-icon.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    },
+    "redirect": {
+      "url": "redirect.html",
+      "icons": [
+        {
+          "src": "icon/euth-icon.png",
+          "sizes": "160x160",
+          "type": "image/png"
+        }
+      ]
+    }
+  }
+}

@@ -4,11 +4,11 @@
 <head>
   <meta charset='utf-8'>
   <meta name="pwa-capable" content="yes">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="manifest" href="manifest.json">
   <link rel="canonical" href="https://kaheetonaa.github.io/id_sandbox_for_all/" />
   <title>iD</title>
   <link rel='stylesheet' href='dist/iD.css'>
-  <link rel='icon' type='image/png' href='icon/euth-icon.png'>
+  <link rel='icon' type='icon/euth-icon.png'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
   <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover">
   <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -24,6 +24,7 @@
       padding: 0;
       /* disable elastic page bounce upon scroll */
       overflow: hidden;
+      font-family: "Comfortaa";
     }
 
     #sidepane {
@@ -40,8 +41,75 @@
     }
 
     .virtual-key {
-      display: none;
-    }
+        display: block;
+      }
+
+      .circle-button {
+        width: 5%;
+        /* Width of the button */
+        aspect-ratio: 1/1;
+        /* Height of the button */
+        border-radius: 50%;
+        /* Makes the button circular */
+        border: none;
+        /* No border */
+        color: white;
+        /* Text color */
+        background-color: hsla(194, 78%, 65%, 0.5);
+        /* Button color */
+        font-size: 32px;
+        /* Font size */
+        cursor: pointer;
+        /* Change cursor to pointer */
+        position: absolute;
+        /* Position absolute for free placement */
+        display: flex;
+        /* Flexbox for centering text */
+        justify-content: center;
+        /* Center text horizontally */
+        align-items: center;
+        /* Center text vertically */
+        transition: background-color 0.3s;
+        /* Smooth background color transition */
+        z-index: 20;
+      }
+
+      .circle-button:hover {
+        background-color: hsla(194, 78%, 65%, 0.8);
+        /* Darker shade on hover */
+      }
+
+      /* Positioning buttons at different locations */
+      #enter {
+        bottom: 10%;
+        /* 20% from the top */
+        right: 25%;
+        /* 20% from the left */
+      }
+
+      #delete {
+        bottom: 10%;
+        /* 20% from the bottom */
+        right: 35%;
+        /* Center horizontally */
+      }
+
+      #Q {
+        bottom: 10%;
+        /* 60% from the top */
+        right: 45%;
+        /* 20% from the right */
+      }
+      
+      #hot-taskingmanager {
+        position:absolute;
+        background-color:red;
+        left:10px;
+        bottom: 5%;
+        z-index:25;
+        color:white;
+      }
+    
 
     @media screen and (orientation: portrait) {
       .virtual-key {
@@ -104,6 +172,8 @@
         right: 50%;
         /* 20% from the right */
       }
+            
+    
 
       html,
       body {
@@ -142,8 +212,6 @@
 </div>
 <div id='sidepane'>
   <div style="padding: 5%">
-    <a href="tm.html">link</a>
-    <button onclick="openTaskingManager()">Go to Page 2</button>
     <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
     <h1>Sandbox for OSM editting 🪣🧤</h1>
     <div id="map"></div>
@@ -159,6 +227,8 @@
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
+      
+
 
 
       function getView() {
@@ -171,6 +241,10 @@
           }, {});
           coordinate = result['map'].split('/')
           map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0]) - 1);
+          if(result['gpx'] !== undefined){
+            taskCode=result['gpx'].split('%2F')[6];
+            document.getElementById("hot-taskingmanager").href="tm.html#taskcode="+taskCode;
+          }
 
           // Fragment exists
         } else {
@@ -178,7 +252,7 @@
           // Fragment doesn't exist
         }
       }
-      setInterval(getView, 2000);
+      getView();
 
     </script>
     <h2>Open sandbox editting in iD editor</h2>
@@ -200,7 +274,7 @@
 
 <body>
   <div id='id-container'></div>
-
+<a id="hot-taskingmanager" href="tm.html">[Only for IOS]Tasking-Manager-Access</a><br>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -227,7 +301,7 @@
 
       //} else {
       var context = iD.coreContext()
-        .assetPath('dist/')
+        .assetPath('https://kaheetonaa.github.io/id_sandbox_for_all/dist/')
         .containerNode(container);
       window.context = window.id = context;  // for debugging
       context.init();
@@ -264,6 +338,14 @@
     document.getElementById("Q").addEventListener("click", function () {
       triggerKeyPress('Q');
     });
+    
+          function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+      if (!isIOS()) {
+        console.log('not ios')
+        document.getElementById("hot-taskingmanager").style.display="none";
+      }
   </script>
 </body>
 

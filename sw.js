@@ -1,12 +1,11 @@
-var GHPATH = '/id_sandbox_for_all';
-var APP_PREFIX = 'id_sandbox_for_all_';
-var VERSION = 'version_002';
+var GHPATH = 'id_sandbox_for_all';
+var APP_PREFIX = 'id_sandbox_for_all';
+var VERSION = 'version_0_0_1';
 var URLS = [    
   `${GHPATH}/`,
   `${GHPATH}/land.html`,
   `${GHPATH}/index.html`,
   `${GHPATH}/dist/iD.css`,
-  `${GHPATH}/img/icon.png`,
   `${GHPATH}/dist/iD.js`
 ]
 
