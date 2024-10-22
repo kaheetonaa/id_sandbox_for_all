@@ -67796,37 +67796,23 @@
         showSplash = true;
       }
       console.log(typeof __team_selected);
+      if (!showSplash) return;
       corePreferences("sawSplash", true);
       let modalSelection = uiModal(selection2);
       modalSelection.select(".modal").attr("class", "modal-splash modal");
       let introModal = modalSelection.select(".content").append("div").attr("class", "fillL");
       introModal.append("div").attr("class", "modal-section").html("<h2>EUthMappers Sandbox for editing </h2>");
-      let team_select = introModal.append("select").attr("name", "team").attr("id", "team");
-      team_select.append("option").attr("value", "null").html("Please select a nation");
-      team_select.append("option").attr("value", "italia").html("Italia");
-      team_select.append("option").attr("value", "portugal").html("Portugal");
-      team_select.append("option").attr("value", "spain").html("Romania");
-      team_select.append("option").attr("value", "slovakia").html("Slovakia");
-      team_select.append("option").attr("value", "spain").html("Spain");
       let modalSection = introModal.append("div").attr("class", "modal-section");
       modalSection.append("p").html("Welcome to <b>Sandbox for editing</b> by <b>EUthMappers</b>");
       let buttonWrap = introModal.append("div").attr("class", "modal-actions");
       let walkthrough = buttonWrap.append("button").attr("class", "walkthrough").on("click", () => {
-        if (document.getElementById("team").value != "null") {
-          __team_selected = document.getElementById("team").value + " #EuthMappers";
-          context.container().call(uiIntro(context));
-          modalSelection.close();
-          corePreferences("hashtags", __team_selected);
-        }
+        context.container().call(uiIntro(context));
+        modalSelection.close();
       });
       walkthrough.append("svg").attr("class", "logo logo-walkthrough").append("use").attr("xlink:href", "#iD-logo-walkthrough");
       walkthrough.append("div").call(_t.append("splash.walkthrough"));
       let startEditing = buttonWrap.append("button").attr("class", "start-editing").on("click", () => {
-        if (document.getElementById("team").value != "null") {
-          __team_selected = document.getElementById("team").value + " #EuthMappers";
-          modalSelection.close();
-          corePreferences("hashtags", __team_selected);
-        }
+        modalSelection.close();
       });
       startEditing.append("svg").attr("class", "logo logo-features").append("use").attr("xlink:href", "#iD-logo-features");
       startEditing.append("div").call(_t.append("splash.start"));
@@ -74331,9 +74317,6 @@
       });
       if (!onInput) {
         var commentOnly = changed.hasOwnProperty("comment") && changed.comment !== "";
-        if (typeof __team_selected != "undefined") {
-          commentOnly += __team_selected;
-        }
         var arr = findHashtags(tags, commentOnly);
         if (arr.length) {
           tags.hashtags = context.cleanTagValue(arr.join(";"));

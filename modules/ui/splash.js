@@ -24,7 +24,7 @@ export function uiSplash(context) {
       showSplash = true;
     }
     console.log(typeof __team_selected)
-    //if (!showSplash) return;
+    if (!showSplash) return;
 
     prefs('sawSplash', true);
 
@@ -43,38 +43,6 @@ export function uiSplash(context) {
       //.append('h3')
       .html("<h2>EUthMappers Sandbox for editing </h2>")
       //.call(t.append('splash.welcome'));
-
-    let team_select=introModal
-    .append('select')
-    .attr('name','team')
-    .attr('id','team')
-
-    team_select.append('option')
-    .attr('value','null')
-    .html('Please select a nation')
-
-    team_select.append('option')
-    .attr('value','italia')
-    .html('Italia')
-
-    team_select.append('option')
-    .attr('value','portugal')
-    .html('Portugal')
-
-    team_select.append('option')
-    .attr('value','spain')
-    .html('Romania')
-
-    team_select.append('option')
-    .attr('value','slovakia')
-    .html('Slovakia')
-
-    team_select.append('option')
-    .attr('value','spain')
-    .html('Spain')
-
-
-
 
     let modalSection = introModal
       .append('div')
@@ -108,12 +76,8 @@ export function uiSplash(context) {
       .append('button')
       .attr('class', 'walkthrough')
       .on('click', () => {
-        if (document.getElementById("team").value!='null'){
-          __team_selected=document.getElementById("team").value+" #EuthMappers";
         context.container().call(uiIntro(context));
         modalSelection.close();
-        prefs('hashtags', __team_selected);
-        }
       });
 
     walkthrough
@@ -129,11 +93,9 @@ export function uiSplash(context) {
     let startEditing = buttonWrap
       .append('button')
       .attr('class', 'start-editing')
-      .on('click', ()=>{if (document.getElementById("team").value!='null'){
-        __team_selected=document.getElementById("team").value+" #EuthMappers";
+      .on('click', ()=>{
         modalSelection.close();
-        prefs('hashtags', __team_selected)
-      }});
+      });
 
     startEditing
       .append('svg')

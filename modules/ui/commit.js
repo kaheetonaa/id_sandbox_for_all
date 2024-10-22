@@ -563,7 +563,6 @@ export function uiCommit(context) {
         if (!onInput) {
             // when changing the comment, override hashtags with any found in comment.
             var commentOnly = changed.hasOwnProperty('comment') && (changed.comment !== '');
-            if(typeof __team_selected!= "undefined"){commentOnly+=__team_selected}
             var arr = findHashtags(tags, commentOnly);
             if (arr.length) {
                 tags.hashtags = context.cleanTagValue(arr.join(';'));
