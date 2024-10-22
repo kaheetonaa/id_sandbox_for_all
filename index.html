@@ -10,7 +10,7 @@
   <link rel='stylesheet' href='dist/iD.css'>
   <link rel='icon' type='icon/euth-icon.png'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-  <meta name="viewport" content="width=device-width; initial-scale=1;">
+  <meta name="viewport" content="width=device-width; initial-scale=1">
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -193,10 +193,6 @@
     p {
       font-family: 'Comfortaa';
     }
-
-    #map {
-      aspect-ratio: 1 / 1;
-    }
   </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -215,9 +211,6 @@
     <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
     <h1>Sandbox for OSM editting 🪣🧤</h1>
     <p>This site has both iD editor (big map drawing tool on the left) and mini map of actual OSM data on the right</p>
-    <script>
-
-    </script>
     <h2>Open sandbox editting in iD editor</h2>
     <li>Open the latest in-development version of iD (<a href="https://ideditor.netlify.app/">ideditor.netlify.app</a>)
       (or you can test directly on this site)</li>
@@ -238,6 +231,29 @@
 <body>
   <div id='id-container'></div>
 <a id="hot-taskingmanager" href="tm.html">[Only for IOS]Tasking-Manager-Access</a><br>
+<script>
+  function getView() {
+    hash = window.location.hash.substr(1);
+    if (window.location.hash) {
+      result = hash.split('&').reduce(function (res, item) {
+        var parts = item.split('=');
+        res[parts[0]] = parts[1];
+        return res;
+      }, {});
+      console.log(result['taskcode'])
+        if (result['taskcode']!== undefined) {
+        document.getElementById("hot-taskingmanager").href="tm.html#taskcode="+result['taskcode'];
+        } else {
+          document.getElementById("hot-taskingmanager").href="tm.html";
+        }
+      // Fragment exists
+    } else {
+      // Fragment doesn't exist
+    }
+  }
+  getView();
+
+</script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -307,7 +323,7 @@
 }
       if (!isIOS()) {
         console.log('not ios')
-        document.getElementById("hot-taskingmanager").style.display="none";
+        //document.getElementById("hot-taskingmanager").style.display="none";
       }
   </script>
 </body>
