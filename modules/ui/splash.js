@@ -23,10 +23,11 @@ export function uiSplash(context) {
       updateMessage = t('splash.privacy_update');
       showSplash = true;
     }
-    console.log(typeof __team_selected)
+
     if (!showSplash) return;
 
     prefs('sawSplash', true);
+    prefs('sawPrivacyVersion', context.privacyVersion);
 
     let modalSelection = uiModal(selection);
 

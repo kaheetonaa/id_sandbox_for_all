@@ -67795,9 +67795,9 @@
         updateMessage = _t("splash.privacy_update");
         showSplash = true;
       }
-      console.log(typeof __team_selected);
       if (!showSplash) return;
       corePreferences("sawSplash", true);
+      corePreferences("sawPrivacyVersion", context.privacyVersion);
       let modalSelection = uiModal(selection2);
       modalSelection.select(".modal").attr("class", "modal-splash modal");
       let introModal = modalSelection.select(".content").append("div").attr("class", "fillL");
