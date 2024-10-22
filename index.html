@@ -10,7 +10,7 @@
   <link rel='stylesheet' href='dist/iD.css'>
   <link rel='icon' type='icon/euth-icon.png'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
-  <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover">
+  <meta name="viewport" content="width=device-width; initial-scale=1;">
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -214,50 +214,8 @@
   <div style="padding: 5%">
     <img src="https://euthmappers.com/app/uploads/2023/05/logo.png" />
     <h1>Sandbox for OSM editting 🪣🧤</h1>
-    <div id="map"></div>
     <p>This site has both iD editor (big map drawing tool on the left) and mini map of actual OSM data on the right</p>
     <script>
-      var hash;
-
-      var result;
-
-      const map = L.map('map').setView([0, 0], 1);
-
-      const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-      
-
-
-
-      function getView() {
-        hash = window.location.hash.substr(1);
-        if (window.location.hash) {
-          result = hash.split('&').reduce(function (res, item) {
-            var parts = item.split('=');
-            res[parts[0]] = parts[1];
-            return res;
-          }, {});
-          coordinate = result['map'].split('/')
-          map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0]) - 1);
-          if(result['gpx'] !== undefined){
-            taskCode=result['gpx'].split('%2F')[6];
-            if (taskCode!== undefined) {
-            document.getElementById("hot-taskingmanager").href="tm.html#taskcode="+taskCode;
-            } else {
-              taskCode=result['gpx'].split('/')[6];
-              document.getElementById("hot-taskingmanager").href="tm.html#taskcode="+taskCode;
-            }
-          }
-
-          // Fragment exists
-        } else {
-          console.log('no!')
-          // Fragment doesn't exist
-        }
-      }
-      getView();
 
     </script>
     <h2>Open sandbox editting in iD editor</h2>
