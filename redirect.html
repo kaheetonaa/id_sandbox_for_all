@@ -25,7 +25,6 @@
         const team=document.getElementById('team');
         var result=[];
         var comment;
-        console.log(window.opener.location.href)
         function updateData() {
             hash = hashTags.substr(1);
             if (window.location.hash) {
@@ -39,9 +38,6 @@
             console.log(result)
         }
         updateData()
-        function teamSelect() {
-
-        }
 
         function passHashTags() {
             let newHash="#";
