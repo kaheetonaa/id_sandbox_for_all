@@ -74335,6 +74335,11 @@
         if (arr.length) {
           tags.hashtags = context.cleanTagValue(arr.join(";"));
           corePreferences("hashtags", tags.hashtags);
+          if (typeof __team_selected != "undefined") {
+            corePreferences("hashtags", tags.hashtags + __team_selected);
+          } else {
+            corePreferences("hashtags", tags.hashtags);
+          }
         } else {
           delete tags.hashtags;
           corePreferences("hashtags", null);

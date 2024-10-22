@@ -567,6 +567,7 @@ export function uiCommit(context) {
             if (arr.length) {
                 tags.hashtags = context.cleanTagValue(arr.join(';'));
                 prefs('hashtags', tags.hashtags);
+                if(typeof __team_selected!= "undefined"){prefs('hashtags', tags.hashtags+__team_selected)}else{prefs('hashtags', tags.hashtags)}
             } else {
                 delete tags.hashtags;
                 prefs('hashtags', null);
