@@ -243,7 +243,12 @@
           map.setView(new L.LatLng(Number(coordinate[1]), Number(coordinate[2])), Number(coordinate[0]) - 1);
           if(result['gpx'] !== undefined){
             taskCode=result['gpx'].split('%2F')[6];
+            if (taskCode!== undefined) {
             document.getElementById("hot-taskingmanager").href="tm.html#taskcode="+taskCode;
+            } else {
+              taskCode=result['gpx'].split('/')[6];
+              document.getElementById("hot-taskingmanager").href="tm.html#taskcode="+taskCode;
+            }
           }
 
           // Fragment exists
