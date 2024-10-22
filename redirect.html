@@ -24,6 +24,7 @@
         const hashTags = window.location.hash;
         const team=document.getElementById('team');
         var comment;
+        console.log(window.opener.location.href)
         function updateData() {
             hash = hashTags.substr(1);
             if (window.location.hash) {
