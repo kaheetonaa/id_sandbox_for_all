@@ -22,7 +22,7 @@
   "shortcuts": [
     {
       "name": "Home",
-      "url": "/",
+      "url": "./",
       "icons": [
         {
           "src": "icon/euth-icon.png",
