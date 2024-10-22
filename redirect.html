@@ -42,7 +42,8 @@
         }
 
         function passHashTags() {
-            let newHash="#"
+            let newHash="#";
+            let taskcode=result['comment'].replace('%23hotosm-project-','');
             if (hashTags) {
                 switch(team.value){
                     case 'it':
@@ -66,6 +67,7 @@
                         result['comment']=result['comment']+'#euthMappers'+'#teamRomania'
                     break;
                 }
+                result['taskcode']=taskcode;
                 for (let tag in result) {
                     newHash+=tag+'='+result[tag]+'&'
                 }
