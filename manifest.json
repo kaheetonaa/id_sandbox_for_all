@@ -12,11 +12,11 @@
   ],
   "name": "iDSandbox4All",
   "short_name": "iDSandbox4All",
-  "start_url": "/", 
-  "scope": "/",
+  "start_url": "/id_sandbox_for_all/", 
+  "scope": "/id_sandbox_for_all/",
   "url_handlers": [
     {
-      "origin": "/"
+      "origin": "/id_sandbox_for_all/"
     }
   ],
   "shortcuts": [
