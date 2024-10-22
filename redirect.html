@@ -9,7 +9,48 @@
 
 </head>
 
+<style>
+    /* Stili generali per il form */
+body{
+    background-color: #62cbec33;
+    text-align: center;
+}
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #62cbec;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* Stili per il select */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+/* Stili per il pulsante */
+#submit {
+  background-color:  #62cbec; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Stili per il pulsante al passaggio del mouse */
+#submit:hover {
+  background-color:  #62cbec; /* Verde più scuro */
+}
+</style>
+
 <body>
+    <form>
     <label for="Choose the team">Choose the team</label>
     <select name="Team" id="team">
         <option value="none">--Please select the team--</option>
@@ -19,7 +60,8 @@
         <option value="sl">🇸🇰Slovakia</option>
         <option value="sp">🇪🇸Spain</option>
     </select>
-    <button onclick="passHashTags()">Let's mapping!</button> <br><br>
+    <button id="submit" onclick="passHashTags()">Let's mapping!</button> <br><br>
+</form>
     <script>
         const hashTags = window.location.hash;
         const team=document.getElementById('team');
