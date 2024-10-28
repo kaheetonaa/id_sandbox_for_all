@@ -86,25 +86,21 @@ select {
             let newHash="#";
             let taskcode=result['comment'].replace('%23hotosm-project-','');
             if (hashTags) {
+                result['locale']=team.value;
                 switch(team.value){
                     case 'it':
-                        result['locale']='it';
                         result['comment']=result['comment']+'#euthMappers'+'#teamItaly'
                     break;
                     case 'pt':
-                        result['locale']='pt';
                         result['comment']=result['comment']+'#euthMappers'+'#teamPortugal'
                     break;
                     case 'sk':
-                        result['locale']='sk';
                         result['comment']=result['comment']+'#euthMappers'+'#teamSlovakia'
                     break;
                     case 'es':
-                        result['locale']='es';
                         result['comment']=result['comment']+'#euthMappers'+'#teamSpain'
                     break;
                     case 'ro':
-                        result['locale']='ro';
                         result['comment']=result['comment']+'#euthMappers'+'#teamRomania'
                     break;
                 }
