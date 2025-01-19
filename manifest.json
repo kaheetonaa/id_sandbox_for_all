@@ -1,6 +1,6 @@
 {
   "background_color": "#62cbec",
-  "description": "idEditor for Sandbox4All",
+  "description": "idEditor for iD4All",
   "display": "standalone",
   "display_override": ["tabbed"],
   "icons": [
@@ -10,8 +10,8 @@
       "type": "image/png"
     }
   ],
-  "name": "iDSandbox4All",
-  "short_name": "iDSandbox4All",
+  "name": "iD4All",
+  "short_name": "iD4All",
   "start_url": "/id_sandbox_for_all/", 
   "scope": "/id_sandbox_for_all/",
   "url_handlers": [

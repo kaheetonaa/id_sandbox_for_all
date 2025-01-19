@@ -1,5 +1,5 @@
-var GHPATH = 'id_sandbox_for_all';
-var APP_PREFIX = 'id_sandbox_for_all';
+var GHPATH = 'id_for_all';
+var APP_PREFIX = 'id_for_all';
 var VERSION = 'version_0_0_1';
 var URLS = [    
   `${GHPATH}/`,
