@@ -3,10 +3,10 @@ var APP_PREFIX = 'id_sandbox_for_all';
 var VERSION = 'version_0_0_1';
 var URLS = [    
   `${GHPATH}/`,
-  `${GHPATH}/land.html`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/dist/iD.css`,
-  `${GHPATH}/dist/iD.js`
+  `${GHPATH}/land_beta.html`,
+  `${GHPATH}/index_beta.html`,
+  `${GHPATH}/dist/iD_beta.css`,
+  `${GHPATH}/dist/iD_beta.js`
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
