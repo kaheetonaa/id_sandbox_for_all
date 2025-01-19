@@ -21349,7 +21349,7 @@
       client_id: "qMoWHp_3M7QjZqr5Sw1JieVSibGB5p71T_QU6fiRUok"
     },
     dev: {
-      url: "https://api.dev.openstreetmap.org",
+      url: "https://api.openstreetmap.org",
       client_id: "qMoWHp_3M7QjZqr5Sw1JieVSibGB5p71T_QU6fiRUok" //change to osm normal
     }
   };
