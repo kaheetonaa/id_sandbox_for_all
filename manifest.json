@@ -10,7 +10,7 @@
       "type": "image/png"
     }
   ],
-  "name": "iD4All",
+  "name": "iDSandbox4All",
   "short_name": "iD4All",
   "start_url": "/id_sandbox_for_all/", 
   "scope": "/id_sandbox_for_all/",
@@ -23,17 +23,6 @@
     {
       "name": "Home",
       "url": "./",
-      "icons": [
-        {
-          "src": "icon/euth-icon.png",
-          "sizes": "160x160",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Beta",
-      "url": "./index_beta.html",
       "icons": [
         {
           "src": "icon/euth-icon.png",
