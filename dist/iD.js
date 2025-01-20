@@ -77550,7 +77550,7 @@
     apiUrl: apiUrlroot,
     client_id: osmApiConnections[0].client_id,
     scope: "read_prefs write_prefs write_api read_gpx write_notes",
-    redirect_uri: redirectPath + "land.html",
+    redirect_uri: redirectPath.replace('index.html','') + "land.html",
     loading: authLoading,
     done: authDone
   });
