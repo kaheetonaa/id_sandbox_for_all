@@ -76320,7 +76320,7 @@
       method: "POST",
       signal: controller.signal,
       body: params,
-      headers: {  "Content-Type": "application/x-www-form-urlencoded" }
+      headers: {  "Access-Control-Allow-Origin": "*", "Content-Type": "application/x-www-form-urlencoded" }
     };
     json_default(url, options2).then(function(data) {
       cache.loaded[id2] = true;
@@ -77386,7 +77386,7 @@
       function _doFetch() {
         options2 = options2 || {};
         if (!options2.headers) {
-          options2.headers = {"Content-Type": "application/x-www-form-urlencoded" }; //update CORS
+          options2.headers = {"Access-Control-Allow-Origin": "*", "Content-Type": "application/x-www-form-urlencoded" }; //update CORS
         }
         options2.headers.Authorization = "Bearer " + token("oauth2_access_token");
         return fetch(resource, options2);
@@ -77426,7 +77426,7 @@
       }
     };
     oauth2.rawxhr = function(method, url, access_token, data, headers, callback) {
-      headers = headers || {  "Content-Type": "application/x-www-form-urlencoded" };
+      headers = headers || {  "Access-Control-Allow-Origin": "*", "Content-Type": "application/x-www-form-urlencoded" };
       if (access_token) {
         headers.Authorization = "Bearer " + access_token;
       }
