@@ -32,8 +32,8 @@
       ]
     },
     {
-      "name": "TM",
-      "url": "tm.html",
+      "name": "beta",
+      "url": "./index_beta.html",
       "icons": [
         {
           "src": "icon/euth-icon.png",

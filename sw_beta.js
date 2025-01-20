@@ -6,7 +6,11 @@ var URLS = [
   `${GHPATH}/land_beta.html`,
   `${GHPATH}/index_beta.html`,
   `${GHPATH}/dist/iD_beta.css`,
-  `${GHPATH}/dist/iD_beta.js`
+  `${GHPATH}/dist/iD_beta.js`,
+  `${GHPATH}/dist/iD.js`,
+  `${GHPATH}/dist/iD_beta.css`,
+  `${GHPATH}/land.html`,
+  `${GHPATH}/index.html`,
 ]
 
 var CACHE_NAME = APP_PREFIX + VERSION
