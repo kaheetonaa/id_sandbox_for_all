@@ -59,6 +59,7 @@ select {
         <option value="ro">🇷🇴Romania</option>
         <option value="sk">🇸🇰Slovakia</option>
         <option value="es">🇪🇸Spain</option>
+        <option value="va">🔎 Validate Team</option>
     </select>
     <button id="submit" onclick="passHashTags()">Let's mapping!</button> <br><br>
 </form>
@@ -86,6 +87,10 @@ select {
             let taskcode=result['comment'].replace('%23hotosm-project-','');
             if (hashTags) {
                 switch(team.value){
+                    case 'va':
+                        result['locale']='en';
+                        result['comment']=result['comment']+'#euthMappers'+'#teamValidate'
+                    break;
                     case 'it':
                         result['locale']='it';
                         result['comment']=result['comment']+'#euthMappers'+'#teamItaly'
