@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json" />
-    <title>Hash Tag Passing</title>
+    <title>Team select 💪</title>
 
 </head>
 
@@ -50,6 +50,7 @@ select {
 </style>
 
 <body>
+    <img src="https://euthmappers.com/app/uploads/2023/05/logo.png"/>
     <form>
     <label for="Choose the team">Choose the team</label>
     <select name="Team" id="team">
@@ -59,7 +60,7 @@ select {
         <option value="ro">🇷🇴Romania</option>
         <option value="sk">🇸🇰Slovakia</option>
         <option value="es">🇪🇸Spain</option>
-        <option value="va">🔎 Validate Team</option>
+        <option value="en">🔎 Team Validate</option>
     </select>
     <button id="submit" onclick="passHashTags()">Let's mapping!</button> <br><br>
 </form>
@@ -86,30 +87,25 @@ select {
             let newHash="#";
             let taskcode=result['comment'].replace('%23hotosm-project-','');
             if (hashTags) {
+                result['locale']=team.value;
                 switch(team.value){
-                    case 'va':
-                        result['locale']='en';
-                        result['comment']=result['comment']+'#euthMappers'+'#teamValidate'
-                    break;
                     case 'it':
-                        result['locale']='it';
                         result['comment']=result['comment']+'#euthMappers'+'#teamItaly'
                     break;
-                    case 'po':
-                        result['locale']='po';
+                    case 'pt':
                         result['comment']=result['comment']+'#euthMappers'+'#teamPortugal'
                     break;
-                    case 'sl':
-                        result['locale']='sl';
+                    case 'sk':
                         result['comment']=result['comment']+'#euthMappers'+'#teamSlovakia'
                     break;
-                    case 'sp':
-                        result['locale']='sp';
+                    case 'es':
                         result['comment']=result['comment']+'#euthMappers'+'#teamSpain'
                     break;
                     case 'ro':
-                        result['locale']='ro';
                         result['comment']=result['comment']+'#euthMappers'+'#teamRomania'
+                    break;
+                    case 'en':
+                        result['comment']=result['comment']+'#euthMappers'+'#teamValidate'
                     break;
                 }
                 result['taskcode']=taskcode;
