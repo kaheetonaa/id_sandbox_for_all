@@ -69894,8 +69894,11 @@
       function handleToggle() {
     const info = context.ui().info;
     if (info && info.toggle) {
+      const isOpen = info.panels && info.panels.measurement && info.panels.measurement.enabled;
+    if (!isOpen) {
         info.toggle("measurement");
         return true;
+    }
     }
     //return false;
 }
