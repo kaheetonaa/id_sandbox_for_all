@@ -57027,7 +57027,7 @@
       }
       return result;
     }
-    var _isImperial = _mainLocalizer.usesMetric();
+    var _isImperial = false//_mainLocalizer.usesMetric();
     function redraw(selection2) {
       var graph = context.graph();
       var selectedNoteID = context.selectedNoteID();
