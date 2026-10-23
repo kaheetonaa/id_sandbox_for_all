@@ -430,6 +430,7 @@ export function uiSectionDataLayers(context) {
         measurementPanelLabelEnter
             .append('input')
             .attr('type', 'checkbox')
+            .property('checked', true)
             .on('change', function(d3_event) {
                 d3_event.preventDefault();
                 context.ui().info.toggle('measurement');
