@@ -83602,6 +83602,5 @@
     window.cancelAnimationFrame(id2);
   };
   window.iD = modules_exports;
-  context.ui().info.toggle("measurement"); //update measurment
 })();
 //# sourceMappingURL=iD.js.map
