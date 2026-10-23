@@ -209,8 +209,9 @@
 <div id='sidepane'>
   <div style="padding: 5%">
     <img src="https://upload.wikimedia.org/wikipedia/it/b/be/Logo_Politecnico_Milano.png" style="width:10vw" />
-    <h1>Sandbox for OSM editing 🪣🧤</h1>
-    <p>[information board]</p>
+    <h1>Survey Tool 🪣🧤</h1>
+    <p>Tool for survey using OSM iDEditor</p>
+    <button onclick="PrintPage()">Print the page</button>
   </div>
 </div>
 </div>
@@ -219,6 +220,9 @@
   <div id='id-container'></div>
 <a id="hot-taskingmanager" href="tm.html">[Only for IOS]Tasking-Manager-Access</a><br>
 <script>
+  function PrintPage(){
+    window.print();
+  }
   function getView() {
     hash = window.location.hash.substr(1);
     if (window.location.hash) {
