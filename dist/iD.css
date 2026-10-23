@@ -3813,10 +3813,6 @@
     color: #fff;
 }
 
-.ideditor .panel-container-measurement {
-    opacity: 1;
-}
-
 .ideditor .fl { float: left;}
 .ideditor .fr { float: right;}
 .ideditor .al { left: 0; }
