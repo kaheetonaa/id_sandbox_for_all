@@ -69890,7 +69890,7 @@
       var measurementPanelLabelEnter = panelsListEnter.append("li").attr("class", "measurement-panel-toggle-item").append("label").call(
         uiTooltip().title(() => _t.append("map_data.measurement_panel.tooltip")).keys([uiCmd("\u2318\u21E7" + _t("info_panels.measurement.key"))]).placement("top")
       );
-      
+      let measurementInitialized = false;  
       function handleToggle() {
     const info = context.ui().info;
     if (info && info.toggle) {
