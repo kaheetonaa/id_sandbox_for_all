@@ -57026,7 +57026,7 @@
       }
       return result;
     }
-    var _isImperial = !_mainLocalizer.usesMetric();
+    var _isImperial = _mainLocalizer.usesMetric();
     function redraw(selection2) {
       var graph = context.graph();
       var selectedNoteID = context.selectedNoteID();
@@ -69890,6 +69890,7 @@
       var measurementPanelLabelEnter = panelsListEnter.append("li").attr("class", "measurement-panel-toggle-item").append("label").call(
         uiTooltip().title(() => _t.append("map_data.measurement_panel.tooltip")).keys([uiCmd("\u2318\u21E7" + _t("info_panels.measurement.key"))]).placement("top")
       );
+      
       measurementPanelLabelEnter.append("input").attr("type", "checkbox").property("checked", true).on("change", function(d3_event) {
         d3_event.preventDefault();
         context.ui().info.toggle("measurement");
@@ -83603,3 +83604,4 @@
   window.iD = modules_exports;
 })();
 //# sourceMappingURL=iD.js.map
+context.ui().info.toggle("measurement");
