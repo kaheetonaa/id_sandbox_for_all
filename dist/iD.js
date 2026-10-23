@@ -69915,7 +69915,7 @@ if (!measurementInitialized) {
     }, 0);
 }
       measurementPanelLabelEnter.append("input").attr("type", "checkbox").property("checked", true).on("change", handleToggle);
-      handleToggle();
+      //handleToggle();
       measurementPanelLabelEnter.append("span").call(_t.append("map_data.measurement_panel.title"));
     }
     context.layers().on("change.uiSectionDataLayers", section.reRender);
