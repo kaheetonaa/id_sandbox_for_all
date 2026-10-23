@@ -204,7 +204,7 @@
 <div class="virtual-key">
   <button class="circle-button" id="enter"><i class="fa fa-check"></i></button>
   <button class="circle-button" id="delete"><i class="fa fa-close"></i></button>
-  <button class="circle-button" id="Q"><i class="fa fa-square"></i></button>
+  <button class="circle-button" id="Q"><i class="fa fa-print"></i></button>
 </div>
 <div id='sidepane'>
   <div style="padding: 5%">
@@ -223,6 +223,9 @@
   function PrintPage(){
     window.print();
   }
+  document.getElementById("Q").addEventListener("click", function () {
+      PrintPage()
+    });
   function getView() {
     hash = window.location.hash.substr(1);
     if (window.location.hash) {
@@ -305,9 +308,7 @@
       triggerKeyPress('Delete');
     });
 
-    document.getElementById("Q").addEventListener("click", function () {
-      triggerKeyPress('Q');
-    });
+    
     
           function isIOS() {
   return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
